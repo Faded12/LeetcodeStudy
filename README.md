@@ -92,34 +92,6 @@ var hasCycle = function(head) {
 
 
 ```
-## 237.删除链表中的节点
-``` javascript
-            /*
- * @lc app=leetcode.cn id=237 lang=javascript
- *
- * [237] 删除链表中的节点
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} node
- * @return {void} Do not return anything, modify node in-place instead.
- */
-var deleteNode = function(node) {
-    node.val = node.next.val
-    node.next = node.next.next
-};
-// @lc code=end
-
-
-```
 ## 1419.数青蛙
 ``` javascript
             /*
@@ -135,6 +107,31 @@ var deleteNode = function(node) {
  */
 var minNumberOfFrogs = function(croakOfFrogs) {
 
+};
+// @lc code=end
+
+
+```
+## 1672.最富有客户的资产总量
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=1672 lang=javascript
+ *
+ * [1672] 最富有客户的资产总量
+ */
+
+// @lc code=start
+/**
+ * @param {number[][]} accounts
+ * @return {number}
+ */
+var maximumWealth = function(accounts) {
+    let max = 0;
+    while(accounts.length){
+        let cur = accounts.pop();
+        max = Math.max(cur.reduce((l,n)=>l+n),max)
+    }
+    return max
 };
 // @lc code=end
 
@@ -175,26 +172,72 @@ var isValid = function(s) {
 
 
 ```
-## 1672.最富有客户的资产总量
+## 2095.删除链表的中间节点
 ``` javascript
             /*
- * @lc app=leetcode.cn id=1672 lang=javascript
+ * @lc app=leetcode.cn id=2095 lang=javascript
  *
- * [1672] 最富有客户的资产总量
+ * [2095] 删除链表的中间节点
  */
 
 // @lc code=start
 /**
- * @param {number[][]} accounts
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteMiddle = function(head) {
+
+};
+// @lc code=end
+
+
+```
+## 70.爬楼梯
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=70 lang=javascript
+ *
+ * [70] 爬楼梯
+ */
+
+// @lc code=start
+/**
+ * @param {number} n
  * @return {number}
  */
-var maximumWealth = function(accounts) {
-    let max = 0;
-    while(accounts.length){
-        let cur = accounts.pop();
-        max = Math.max(cur.reduce((l,n)=>l+n),max)
+var climbStairs = function(n) {
+    let res = [1,1]
+    for(let i = 2;i<=n;i++){
+        res[i] = res[i-1] + res[i-2]
     }
-    return max
+    return res[n]
+};
+// @lc code=end
+
+
+```
+## 46.全排列
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=46 lang=javascript
+ *
+ * [46] 全排列
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permute = function(nums) {
+
 };
 // @lc code=end
 
@@ -230,32 +273,40 @@ var simplifyPath = function(path) {
 
 
 ```
-## 46.全排列
+## 237.删除链表中的节点
 ``` javascript
             /*
- * @lc app=leetcode.cn id=46 lang=javascript
+ * @lc app=leetcode.cn id=237 lang=javascript
  *
- * [46] 全排列
+ * [237] 删除链表中的节点
  */
 
 // @lc code=start
 /**
- * @param {number[]} nums
- * @return {number[][]}
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
  */
-var permute = function(nums) {
-
+/**
+ * @param {ListNode} node
+ * @return {void} Do not return anything, modify node in-place instead.
+ */
+var deleteNode = function(node) {
+    node.val = node.next.val
+    node.next = node.next.next
 };
 // @lc code=end
 
 
 ```
-## 2095.删除链表的中间节点
+## 83.删除排序链表中的重复元素
 ``` javascript
             /*
- * @lc app=leetcode.cn id=2095 lang=javascript
+ * @lc app=leetcode.cn id=83 lang=javascript
  *
- * [2095] 删除链表的中间节点
+ * [83] 删除排序链表中的重复元素
  */
 
 // @lc code=start
@@ -270,54 +321,20 @@ var permute = function(nums) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteMiddle = function(head) {
-
-};
-// @lc code=end
-
-
-```
-## 509.斐波那契数
-``` javascript
-            /*
- * @lc app=leetcode.cn id=509 lang=javascript
- *
- * [509] 斐波那契数
- */
-
-// @lc code=start
-/**
- * @param {number} n
- * @return {number}
- */
-var fib = function(n) {
-    let arr = [0,1]
-    let i = 2
-    while(i<=n){
-        arr[i] = arr[i-1] + arr[i-2]
-        ++i
+var deleteDuplicates = function(head) {
+    let h = head
+    while(h && h.next){
+        if(h.val === h.next.val){
+            h.next = h.next.next
+        }else{
+            h = h.next
+        }
     }
-    return arr[n]
+    return head
 };
 // @lc code=end
 
 
-```
-## instanceof.js
-``` javascript
-            function ins(a,b){
-    //指针
- let i = a
- while(i){
-   if(i===b.prototype) return true
-   i=i.__proto__
- }
- return false 
-}
-
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
 ```
 ## const.js
 ``` javascript
@@ -348,6 +365,32 @@ for (let item in window) { // 因为const定义的属性在global下也是不存
     }
 }
 a = 20 // 报错
+```
+## 509.斐波那契数
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=509 lang=javascript
+ *
+ * [509] 斐波那契数
+ */
+
+// @lc code=start
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var fib = function(n) {
+    let arr = [0,1]
+    let i = 2
+    while(i<=n){
+        arr[i] = arr[i-1] + arr[i-2]
+        ++i
+    }
+    return arr[n]
+};
+// @lc code=end
+
+
 ```
 ## deepClone.js
 ``` javascript
@@ -412,6 +455,29 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 // 会抛弃对象的constructor,所有的构造函数会指向Object
 // 对象有循环引用,会报错
 ```
+## debounce.js
+``` javascript
+            // 防抖
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+```
 ## linkedList.js
 ``` javascript
             // 链表
@@ -447,42 +513,21 @@ function dg2(obj){
 dg2(a)
 console.log(arr)
 ```
-## debounce.js
+## instanceof.js
 ``` javascript
-            // 防抖
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
+            function ins(a,b){
+    //指针
+ let i = a
+ while(i){
+   if(i===b.prototype) return true
+   i=i.__proto__
+ }
+ return false 
 }
 
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
-```
-## throttle.js
-``` javascript
-            // 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
-        }
-    }
-}
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
 ```
 ## stack.js
 ``` javascript
@@ -502,4 +547,18 @@ function f2(){
 function f3(){}
 
 f1()
+```
+## throttle.js
+``` javascript
+            // 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
+        }
+    }
+}
 ```
