@@ -120,156 +120,25 @@ var deleteNode = function(node) {
 
 
 ```
-## 46.全排列
+## 1419.数青蛙
 ``` javascript
             /*
- * @lc app=leetcode.cn id=46 lang=javascript
+ * @lc app=leetcode.cn id=1419 lang=javascript
  *
- * [46] 全排列
+ * [1419] 数青蛙
  */
 
 // @lc code=start
 /**
- * @param {number[]} nums
- * @return {number[][]}
- */
-var permute = function(nums) {
-
-};
-// @lc code=end
-
-
-```
-## 1672.最富有客户的资产总量
-``` javascript
-            /*
- * @lc app=leetcode.cn id=1672 lang=javascript
- *
- * [1672] 最富有客户的资产总量
- */
-
-// @lc code=start
-/**
- * @param {number[][]} accounts
+ * @param {string} croakOfFrogs
  * @return {number}
  */
-var maximumWealth = function(accounts) {
-    let max = 0;
-    while(accounts.length){
-        let cur = accounts.pop();
-        max = Math.max(cur.reduce((l,n)=>l+n),max)
-    }
-    return max
-};
-// @lc code=end
-
-
-```
-## 509.斐波那契数
-``` javascript
-            /*
- * @lc app=leetcode.cn id=509 lang=javascript
- *
- * [509] 斐波那契数
- */
-
-// @lc code=start
-/**
- * @param {number} n
- * @return {number}
- */
-var fib = function(n) {
-    let arr = [0,1]
-    let i = 2
-    while(i<=n){
-        arr[i] = arr[i-1] + arr[i-2]
-        ++i
-    }
-    return arr[n]
-};
-// @lc code=end
-
-
-```
-## 2095.删除链表的中间节点
-``` javascript
-            /*
- * @lc app=leetcode.cn id=2095 lang=javascript
- *
- * [2095] 删除链表的中间节点
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var deleteMiddle = function(head) {
+var minNumberOfFrogs = function(croakOfFrogs) {
 
 };
 // @lc code=end
 
 
-```
-## 71.简化路径
-``` javascript
-            /*
- * @lc app=leetcode.cn id=71 lang=javascript
- *
- * [71] 简化路径
- */
-
-// @lc code=start
-/**
- * @param {string} path
- * @return {string}
- */
-var simplifyPath = function(path) {
-    let stack =[]
-    let paths = path.split('/')
-    for(let i=0;i<paths.length;i++){
-        const p =paths[i]
-        if(p=='..'){
-            stack.pop()
-        }else if(p && p!=='.'){
-            stack.push(p)
-        }
-    }
-    return '/'+stack.join('/')
-};
-// @lc code=end
-
-
-```
-## debounce.js
-``` javascript
-            // 防抖
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
-
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
 ```
 ## 20.有效的括号
 ``` javascript
@@ -306,6 +175,150 @@ var isValid = function(s) {
 
 
 ```
+## 1672.最富有客户的资产总量
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=1672 lang=javascript
+ *
+ * [1672] 最富有客户的资产总量
+ */
+
+// @lc code=start
+/**
+ * @param {number[][]} accounts
+ * @return {number}
+ */
+var maximumWealth = function(accounts) {
+    let max = 0;
+    while(accounts.length){
+        let cur = accounts.pop();
+        max = Math.max(cur.reduce((l,n)=>l+n),max)
+    }
+    return max
+};
+// @lc code=end
+
+
+```
+## 71.简化路径
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=71 lang=javascript
+ *
+ * [71] 简化路径
+ */
+
+// @lc code=start
+/**
+ * @param {string} path
+ * @return {string}
+ */
+var simplifyPath = function(path) {
+    let stack =[]
+    let paths = path.split('/')
+    for(let i=0;i<paths.length;i++){
+        const p =paths[i]
+        if(p=='..'){
+            stack.pop()
+        }else if(p && p!=='.'){
+            stack.push(p)
+        }
+    }
+    return '/'+stack.join('/')
+};
+// @lc code=end
+
+
+```
+## 46.全排列
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=46 lang=javascript
+ *
+ * [46] 全排列
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permute = function(nums) {
+
+};
+// @lc code=end
+
+
+```
+## 2095.删除链表的中间节点
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=2095 lang=javascript
+ *
+ * [2095] 删除链表的中间节点
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteMiddle = function(head) {
+
+};
+// @lc code=end
+
+
+```
+## 509.斐波那契数
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=509 lang=javascript
+ *
+ * [509] 斐波那契数
+ */
+
+// @lc code=start
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var fib = function(n) {
+    let arr = [0,1]
+    let i = 2
+    while(i<=n){
+        arr[i] = arr[i-1] + arr[i-2]
+        ++i
+    }
+    return arr[n]
+};
+// @lc code=end
+
+
+```
+## instanceof.js
+``` javascript
+            function ins(a,b){
+    //指针
+ let i = a
+ while(i){
+   if(i===b.prototype) return true
+   i=i.__proto__
+ }
+ return false 
+}
+
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
+```
 ## const.js
 ``` javascript
             var __const = function __const(data, value) {
@@ -335,40 +348,6 @@ for (let item in window) { // 因为const定义的属性在global下也是不存
     }
 }
 a = 20 // 报错
-```
-## 1419.数青蛙
-``` javascript
-            /*
- * @lc app=leetcode.cn id=1419 lang=javascript
- *
- * [1419] 数青蛙
- */
-
-// @lc code=start
-/**
- * @param {string} croakOfFrogs
- * @return {number}
- */
-var minNumberOfFrogs = function(croakOfFrogs) {
-
-};
-// @lc code=end
-
-
-```
-## throttle.js
-``` javascript
-            // 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
-        }
-    }
-}
 ```
 ## deepClone.js
 ``` javascript
@@ -433,22 +412,6 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 // 会抛弃对象的constructor,所有的构造函数会指向Object
 // 对象有循环引用,会报错
 ```
-## instanceof.js
-``` javascript
-            function ins(a,b){
-    //指针
- let i = a
- while(i){
-   if(i===b.prototype) return true
-   i=i.__proto__
- }
- return false 
-}
-
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
-```
 ## linkedList.js
 ``` javascript
             // 链表
@@ -483,6 +446,43 @@ function dg2(obj){
 }
 dg2(a)
 console.log(arr)
+```
+## debounce.js
+``` javascript
+            // 防抖
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+```
+## throttle.js
+``` javascript
+            // 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
+        }
+    }
+}
 ```
 ## stack.js
 ``` javascript

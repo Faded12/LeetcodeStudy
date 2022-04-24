@@ -1,4 +1,5 @@
 #!/bin/bash
+npm run build
 startTime=`date +%Y%m%d-%H:%M:%S`
 startTime_s=`date +%s`
 workdir=$(cd $(dirname $0); pwd)
