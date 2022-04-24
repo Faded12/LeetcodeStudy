@@ -7,6 +7,7 @@ const generateInstall = (dirPath = '.') => {
     var mdData = ''
 
     files.map((item) => {
+        if(item.indexOf('genMd')>-1) return
         const name = item.split('/')[1].split('.').splice(0,2).join('.');
         // toReadFile(item, name)
         fs.readFile(path.join(__dirname, item), 'utf8', function (err, data) {

@@ -1,3 +1,32 @@
+## 1.两数之和
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=1 lang=javascript
+ *
+ * [1] 两数之和
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let map = {}
+    for(let i = 0;i<nums.length;i++){
+        let res = target - nums[i]
+        if(res in map){
+            return [map[res],i]
+        }else{
+            map[nums[i]] = i
+        }
+    }
+};
+// @lc code=end
+
+
+```
 ## 104.二叉树的最大深度
 ``` javascript
             /*
@@ -22,26 +51,6 @@
 var maxDepth = function(root) {
     if(!root) return 0
     return Math.max(maxDepth(root.left),maxDepth(root.right)) +1
-};
-// @lc code=end
-
-
-```
-## 1419.数青蛙
-``` javascript
-            /*
- * @lc app=leetcode.cn id=1419 lang=javascript
- *
- * [1419] 数青蛙
- */
-
-// @lc code=start
-/**
- * @param {string} croakOfFrogs
- * @return {number}
- */
-var minNumberOfFrogs = function(croakOfFrogs) {
-
 };
 // @lc code=end
 
@@ -83,31 +92,6 @@ var hasCycle = function(head) {
 
 
 ```
-## 1672.最富有客户的资产总量
-``` javascript
-            /*
- * @lc app=leetcode.cn id=1672 lang=javascript
- *
- * [1672] 最富有客户的资产总量
- */
-
-// @lc code=start
-/**
- * @param {number[][]} accounts
- * @return {number}
- */
-var maximumWealth = function(accounts) {
-    let max = 0;
-    while(accounts.length){
-        let cur = accounts.pop();
-        max = Math.max(cur.reduce((l,n)=>l+n),max)
-    }
-    return max
-};
-// @lc code=end
-
-
-```
 ## 237.删除链表中的节点
 ``` javascript
             /*
@@ -136,41 +120,6 @@ var deleteNode = function(node) {
 
 
 ```
-## 20.有效的括号
-``` javascript
-            /*
- * @lc app=leetcode.cn id=20 lang=javascript
- *
- * [20] 有效的括号
- */
-
-// @lc code=start
-/**
- * @param {string} s
- * @return {boolean}
- */
-var isValid = function(s) {
-    let stack = []
-    const obj = {
-        '{':'}',
-        '[':']',
-        '(':')',
-    }
-    for(let i=0;i<s.length;i++){
-        if(s[i] in obj){
-            stack.push(s[i])
-        }else{
-            if(s[i] !== obj[stack.pop()]){
-                return false
-            }
-        }
-    }
-    return !stack.length
-};
-// @lc code=end
-
-
-```
 ## 46.全排列
 ``` javascript
             /*
@@ -191,30 +140,26 @@ var permute = function(nums) {
 
 
 ```
-## 1.两数之和
+## 1672.最富有客户的资产总量
 ``` javascript
             /*
- * @lc app=leetcode.cn id=1 lang=javascript
+ * @lc app=leetcode.cn id=1672 lang=javascript
  *
- * [1] 两数之和
+ * [1672] 最富有客户的资产总量
  */
 
 // @lc code=start
 /**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
+ * @param {number[][]} accounts
+ * @return {number}
  */
-var twoSum = function(nums, target) {
-    let map = {}
-    for(let i = 0;i<nums.length;i++){
-        let res = target - nums[i]
-        if(res in map){
-            return [map[res],i]
-        }else{
-            map[nums[i]] = i
-        }
+var maximumWealth = function(accounts) {
+    let max = 0;
+    while(accounts.length){
+        let cur = accounts.pop();
+        max = Math.max(cur.reduce((l,n)=>l+n),max)
     }
+    return max
 };
 // @lc code=end
 
@@ -303,6 +248,64 @@ var simplifyPath = function(path) {
 
 
 ```
+## debounce.js
+``` javascript
+            // 防抖
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+```
+## 20.有效的括号
+``` javascript
+            /*
+ * @lc app=leetcode.cn id=20 lang=javascript
+ *
+ * [20] 有效的括号
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    let stack = []
+    const obj = {
+        '{':'}',
+        '[':']',
+        '(':')',
+    }
+    for(let i=0;i<s.length;i++){
+        if(s[i] in obj){
+            stack.push(s[i])
+        }else{
+            if(s[i] !== obj[stack.pop()]){
+                return false
+            }
+        }
+    }
+    return !stack.length
+};
+// @lc code=end
+
+
+```
 ## const.js
 ``` javascript
             var __const = function __const(data, value) {
@@ -333,90 +336,39 @@ for (let item in window) { // 因为const定义的属性在global下也是不存
 }
 a = 20 // 报错
 ```
-## genMd.js
+## 1419.数青蛙
 ``` javascript
-            const fs = require('fs');
-const glob = require('glob');
-const path = require('path');
+            /*
+ * @lc app=leetcode.cn id=1419 lang=javascript
+ *
+ * [1419] 数青蛙
+ */
 
-const generateInstall = (dirPath = '.') => {
-    const files = glob.sync(`${dirPath}/*.js`);
-    var mdData = ''
+// @lc code=start
+/**
+ * @param {string} croakOfFrogs
+ * @return {number}
+ */
+var minNumberOfFrogs = function(croakOfFrogs) {
 
-    files.map((item) => {
-        const name = item.split('/')[1].split('.').splice(0,2).join('.');
-        // toReadFile(item, name)
-        fs.readFile(path.join(__dirname, item), 'utf8', function (err, data) {
-            if (err) throw err;
-            mdData += `## ${name}
-\`\`\` javascript
-            ${data}
-\`\`\`
-`
-        })
-    })
-
-    setTimeout(()=>{
-        fs.writeFileSync(path.join(__dirname, `./README.md`), mdData, 'utf8', (err) => {
-            if (err) throw err;
-        });
-    },1000)
-    
-}
+};
+// @lc code=end
 
 
-generateInstall()
 ```
-## instanceof.js
+## throttle.js
 ``` javascript
-            function ins(a,b){
-    //指针
- let i = a
- while(i){
-   if(i===b.prototype) return true
-   i=i.__proto__
- }
- return false 
-}
-
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
-```
-## linkedList.js
-``` javascript
-            // 链表
-const d = {
-    val:'d'
-}
-const c = {
-    val:'c',
-    next:d
-}
-const b = {
-    val:'b',
-    next:c
-}
-const a = {
-    val:'a',
-    next:b
-}
-
-let arr = []
-// function dg(obj){
-//     arr.push(obj.val)
-//     if(!obj.next)return
-//     dg(obj.next)
-// }
-// dg(a)
-function dg2(obj){
-    while(obj){
-        arr.push(obj.val)
-        obj = obj.next
+            // 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
+        }
     }
 }
-dg2(a)
-console.log(arr)
 ```
 ## deepClone.js
 ``` javascript
@@ -481,6 +433,57 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 // 会抛弃对象的constructor,所有的构造函数会指向Object
 // 对象有循环引用,会报错
 ```
+## instanceof.js
+``` javascript
+            function ins(a,b){
+    //指针
+ let i = a
+ while(i){
+   if(i===b.prototype) return true
+   i=i.__proto__
+ }
+ return false 
+}
+
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
+```
+## linkedList.js
+``` javascript
+            // 链表
+const d = {
+    val:'d'
+}
+const c = {
+    val:'c',
+    next:d
+}
+const b = {
+    val:'b',
+    next:c
+}
+const a = {
+    val:'a',
+    next:b
+}
+
+let arr = []
+// function dg(obj){
+//     arr.push(obj.val)
+//     if(!obj.next)return
+//     dg(obj.next)
+// }
+// dg(a)
+function dg2(obj){
+    while(obj){
+        arr.push(obj.val)
+        obj = obj.next
+    }
+}
+dg2(a)
+console.log(arr)
+```
 ## stack.js
 ``` javascript
             // const stack = [];
@@ -499,41 +502,4 @@ function f2(){
 function f3(){}
 
 f1()
-```
-## debounce.js
-``` javascript
-            // 防抖
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
-
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
-```
-## throttle.js
-``` javascript
-            // 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
-        }
-    }
-}
 ```
