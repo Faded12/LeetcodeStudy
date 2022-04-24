@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div id="d1">
+        <button id="b1">1</button>
+    </div>
+    <button id="b2">2</button>
+</body>
+<script>
+
+var bb1 = ''
+function b1(e){
+    console.log(111)
+    d1.removeChild(e)
+}
+b2.addEventListener('click',()=>{
+    d1.innerHTML = `<button id="b1">1</button>`
+    console.log(222)
+})
+body.addEventListener('click',(e)=>{
+    if(e.target.id==='b1'){
+        b1(e.target)
+    }
+})
+</script>
+</html>
