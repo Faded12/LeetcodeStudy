@@ -1,0 +1,23 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "Javascript Leetcode",
+  "main": "genMd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./genMd.js;./git.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faded12/LeetcodeStudy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Faded12/LeetcodeStudy/issues"
+  },
+  "homepage": "https://github.com/Faded12/LeetcodeStudy#readme",
+  "devDependencies": {
+    "glob": "^8.0.1"
+  }
+}
