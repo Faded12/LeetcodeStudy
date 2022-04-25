@@ -1,24 +1,24 @@
-<a href="#1两数之和.js">1.两数之和.js</a>
-<a href="#104二叉树的最大深度.js">104.二叉树的最大深度.js</a>
-<a href="#1419数青蛙.js">1419.数青蛙.js</a>
-<a href="#2095删除链表的中间节点.js">2095.删除链表的中间节点.js</a>
-<a href="#1672最富有客户的资产总量.js">1672.最富有客户的资产总量.js</a>
-<a href="#20有效的括号.js">20.有效的括号.js</a>
-<a href="#141环形链表.js">141.环形链表.js</a>
-<a href="#237删除链表中的节点.js">237.删除链表中的节点.js</a>
-<a href="#46全排列.js">46.全排列.js</a>
-<a href="#509斐波那契数.js">509.斐波那契数.js</a>
-<a href="#70爬楼梯.js">70.爬楼梯.js</a>
-<a href="#71简化路径.js">71.简化路径.js</a>
-<a href="#83删除排序链表中的重复元素.js">83.删除排序链表中的重复元素.js</a>
-<a href="#constjs">const.js</a>
-<a href="#debouncejs">debounce.js</a>
-<a href="#deepClonejs">deepClone.js</a>
-<a href="#linkedListjs">linkedList.js</a>
-<a href="#stackjs">stack.js</a>
-<a href="#throttlejs">throttle.js</a>
-<a href="#instanceofjs">instanceof.js</a>
 
+<a href="#">1.两数之和.js</a></br>
+<a href="#">104.二叉树的最大深度.js</a></br>
+<a href="#">1419.数青蛙.js</a></br>
+<a href="#">1672.最富有客户的资产总量.js</a></br>
+<a href="#">20.有效的括号.js</a></br>
+<a href="#">141.环形链表.js</a></br>
+<a href="#">2095.删除链表的中间节点.js</a></br>
+<a href="#">237.删除链表中的节点.js</a></br>
+<a href="#">46.全排列.js</a></br>
+<a href="#">509.斐波那契数.js</a></br>
+<a href="#">70.爬楼梯.js</a></br>
+<a href="#">71.简化路径.js</a></br>
+<a href="#">83.删除排序链表中的重复元素.js</a></br>
+<a href="#">const.js</a></br>
+<a href="#">debounce.js</a></br>
+<a href="#">deepClone.js</a></br>
+<a href="#">instanceof.js</a></br>
+<a href="#">stack.js</a></br>
+<a href="#">throttle.js</a></br>
+<a href="#">linkedList.js</a></br>
 ## 1.两数之和.js
 ``` javascript
 /*
@@ -95,35 +95,6 @@ var maxDepth = function(root) {
  * @return {number}
  */
 var minNumberOfFrogs = function(croakOfFrogs) {
-
-};
-// @lc code=end
-
-
-```
-
-
-## 2095.删除链表的中间节点.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=2095 lang=javascript
- *
- * [2095] 删除链表的中间节点
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var deleteMiddle = function(head) {
 
 };
 // @lc code=end
@@ -227,6 +198,35 @@ var hasCycle = function(head) {
         if(fast === slow) return true
     }
     return false
+};
+// @lc code=end
+
+
+```
+
+
+## 2095.删除链表的中间节点.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=2095 lang=javascript
+ *
+ * [2095] 删除链表的中间节点
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteMiddle = function(head) {
+
 };
 // @lc code=end
 
@@ -531,40 +531,21 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 ```
 
 
-## linkedList.js
+## instanceof.js
 ``` javascript
-// 链表
-const d = {
-    val:'d'
-}
-const c = {
-    val:'c',
-    next:d
-}
-const b = {
-    val:'b',
-    next:c
-}
-const a = {
-    val:'a',
-    next:b
+function ins(a,b){
+    //指针
+ let i = a
+ while(i){
+   if(i===b.prototype) return true
+   i=i.__proto__
+ }
+ return false 
 }
 
-let arr = []
-// function dg(obj){
-//     arr.push(obj.val)
-//     if(!obj.next)return
-//     dg(obj.next)
-// }
-// dg(a)
-function dg2(obj){
-    while(obj){
-        arr.push(obj.val)
-        obj = obj.next
-    }
-}
-dg2(a)
-console.log(arr)
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
 ```
 
 
@@ -605,20 +586,39 @@ const throttle = (fn,wait)=>{
 ```
 
 
-## instanceof.js
+## linkedList.js
 ``` javascript
-function ins(a,b){
-    //指针
- let i = a
- while(i){
-   if(i===b.prototype) return true
-   i=i.__proto__
- }
- return false 
+// 链表
+const d = {
+    val:'d'
+}
+const c = {
+    val:'c',
+    next:d
+}
+const b = {
+    val:'b',
+    next:c
+}
+const a = {
+    val:'a',
+    next:b
 }
 
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
+let arr = []
+// function dg(obj){
+//     arr.push(obj.val)
+//     if(!obj.next)return
+//     dg(obj.next)
+// }
+// dg(a)
+function dg2(obj){
+    while(obj){
+        arr.push(obj.val)
+        obj = obj.next
+    }
+}
+dg2(a)
+console.log(arr)
 ```
 
