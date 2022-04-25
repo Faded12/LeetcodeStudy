@@ -1,55 +1,24 @@
 
-<a href="#">1.两数之和.js</a></br>
-<a href="#">104.二叉树的最大深度.js</a></br>
-<a href="#">1419.数青蛙.js</a></br>
-<a href="#">1672.最富有客户的资产总量.js</a></br>
-<a href="#">20.有效的括号.js</a></br>
-<a href="#">141.环形链表.js</a></br>
-<a href="#">2095.删除链表的中间节点.js</a></br>
-<a href="#">237.删除链表中的节点.js</a></br>
-<a href="#">46.全排列.js</a></br>
-<a href="#">509.斐波那契数.js</a></br>
-<a href="#">70.爬楼梯.js</a></br>
-<a href="#">71.简化路径.js</a></br>
-<a href="#">83.删除排序链表中的重复元素.js</a></br>
-<a href="#">const.js</a></br>
-<a href="#">debounce.js</a></br>
-<a href="#">deepClone.js</a></br>
-<a href="#">instanceof.js</a></br>
-<a href="#">stack.js</a></br>
-<a href="#">throttle.js</a></br>
-<a href="#">linkedList.js</a></br>
-## 1.两数之和.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=1 lang=javascript
- *
- * [1] 两数之和
- */
-
-// @lc code=start
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let map = {}
-    for(let i = 0;i<nums.length;i++){
-        let res = target - nums[i]
-        if(res in map){
-            return [map[res],i]
-        }else{
-            map[nums[i]] = i
-        }
-    }
-};
-// @lc code=end
-
-
-```
-
-
+<a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
+<a href="#1两数之和js">1.两数之和.js</a></br>
+<a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a></br>
+<a href="#141环形链表js">141.环形链表.js</a></br>
+<a href="#20有效的括号js">20.有效的括号.js</a></br>
+<a href="#1419数青蛙js">1419.数青蛙.js</a></br>
+<a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a></br>
+<a href="#237删除链表中的节点js">237.删除链表中的节点.js</a></br>
+<a href="#509斐波那契数js">509.斐波那契数.js</a></br>
+<a href="#70爬楼梯js">70.爬楼梯.js</a></br>
+<a href="#71简化路径js">71.简化路径.js</a></br>
+<a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a></br>
+<a href="#constjs">const.js</a></br>
+<a href="#debouncejs">debounce.js</a></br>
+<a href="#deepClonejs">deepClone.js</a></br>
+<a href="#instanceofjs">instanceof.js</a></br>
+<a href="#linkedListjs">linkedList.js</a></br>
+<a href="#stackjs">stack.js</a></br>
+<a href="#throttlejs">throttle.js</a></br>
+<a href="#46全排列js">46.全排列.js</a></br>
 ## 104.二叉树的最大深度.js
 ``` javascript
 /*
@@ -81,21 +50,30 @@ var maxDepth = function(root) {
 ```
 
 
-## 1419.数青蛙.js
+## 1.两数之和.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=1419 lang=javascript
+ * @lc app=leetcode.cn id=1 lang=javascript
  *
- * [1419] 数青蛙
+ * [1] 两数之和
  */
 
 // @lc code=start
 /**
- * @param {string} croakOfFrogs
- * @return {number}
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
  */
-var minNumberOfFrogs = function(croakOfFrogs) {
-
+var twoSum = function(nums, target) {
+    let map = {}
+    for(let i = 0;i<nums.length;i++){
+        let res = target - nums[i]
+        if(res in map){
+            return [map[res],i]
+        }else{
+            map[nums[i]] = i
+        }
+    }
 };
 // @lc code=end
 
@@ -123,6 +101,44 @@ var maximumWealth = function(accounts) {
         max = Math.max(cur.reduce((l,n)=>l+n),max)
     }
     return max
+};
+// @lc code=end
+
+
+```
+
+
+## 141.环形链表.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=141 lang=javascript
+ *
+ * [141] 环形链表
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+    if(!head) return false
+    let slow = head
+    let fast = head
+    while(fast && fast.next){
+        slow = slow.next
+        fast = fast.next.next
+        if(fast === slow) return true
+    }
+    return false
 };
 // @lc code=end
 
@@ -167,37 +183,21 @@ var isValid = function(s) {
 ```
 
 
-## 141.环形链表.js
+## 1419.数青蛙.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=141 lang=javascript
+ * @lc app=leetcode.cn id=1419 lang=javascript
  *
- * [141] 环形链表
+ * [1419] 数青蛙
  */
 
 // @lc code=start
 /**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
+ * @param {string} croakOfFrogs
+ * @return {number}
  */
+var minNumberOfFrogs = function(croakOfFrogs) {
 
-/**
- * @param {ListNode} head
- * @return {boolean}
- */
-var hasCycle = function(head) {
-    if(!head) return false
-    let slow = head
-    let fast = head
-    while(fast && fast.next){
-        slow = slow.next
-        fast = fast.next.next
-        if(fast === slow) return true
-    }
-    return false
 };
 // @lc code=end
 
@@ -257,28 +257,6 @@ var deleteMiddle = function(head) {
 var deleteNode = function(node) {
     node.val = node.next.val
     node.next = node.next.next
-};
-// @lc code=end
-
-
-```
-
-
-## 46.全排列.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=46 lang=javascript
- *
- * [46] 全排列
- */
-
-// @lc code=start
-/**
- * @param {number[]} nums
- * @return {number[][]}
- */
-var permute = function(nums) {
-
 };
 // @lc code=end
 
@@ -549,6 +527,43 @@ console.log(ins(122,String))
 ```
 
 
+## linkedList.js
+``` javascript
+// 链表
+const d = {
+    val:'d'
+}
+const c = {
+    val:'c',
+    next:d
+}
+const b = {
+    val:'b',
+    next:c
+}
+const a = {
+    val:'a',
+    next:b
+}
+
+let arr = []
+// function dg(obj){
+//     arr.push(obj.val)
+//     if(!obj.next)return
+//     dg(obj.next)
+// }
+// dg(a)
+function dg2(obj){
+    while(obj){
+        arr.push(obj.val)
+        obj = obj.next
+    }
+}
+dg2(a)
+console.log(arr)
+```
+
+
 ## stack.js
 ``` javascript
 // const stack = [];
@@ -586,39 +601,24 @@ const throttle = (fn,wait)=>{
 ```
 
 
-## linkedList.js
+## 46.全排列.js
 ``` javascript
-// 链表
-const d = {
-    val:'d'
-}
-const c = {
-    val:'c',
-    next:d
-}
-const b = {
-    val:'b',
-    next:c
-}
-const a = {
-    val:'a',
-    next:b
-}
+/*
+ * @lc app=leetcode.cn id=46 lang=javascript
+ *
+ * [46] 全排列
+ */
 
-let arr = []
-// function dg(obj){
-//     arr.push(obj.val)
-//     if(!obj.next)return
-//     dg(obj.next)
-// }
-// dg(a)
-function dg2(obj){
-    while(obj){
-        arr.push(obj.val)
-        obj = obj.next
-    }
-}
-dg2(a)
-console.log(arr)
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permute = function(nums) {
+
+};
+// @lc code=end
+
+
 ```
 
