@@ -1,5 +1,23 @@
-
-<a href="#1672最富有客户的资产总量js">~~</a>
+<a href="#1两数之和.js">1.两数之和.js</a>
+<a href="#104二叉树的最大深度.js">104.二叉树的最大深度.js</a>
+<a href="#1419数青蛙.js">1419.数青蛙.js</a>
+<a href="#2095删除链表的中间节点.js">2095.删除链表的中间节点.js</a>
+<a href="#1672最富有客户的资产总量.js">1672.最富有客户的资产总量.js</a>
+<a href="#20有效的括号.js">20.有效的括号.js</a>
+<a href="#141环形链表.js">141.环形链表.js</a>
+<a href="#237删除链表中的节点.js">237.删除链表中的节点.js</a>
+<a href="#46全排列.js">46.全排列.js</a>
+<a href="#509斐波那契数.js">509.斐波那契数.js</a>
+<a href="#70爬楼梯.js">70.爬楼梯.js</a>
+<a href="#71简化路径.js">71.简化路径.js</a>
+<a href="#83删除排序链表中的重复元素.js">83.删除排序链表中的重复元素.js</a>
+<a href="#constjs">const.js</a>
+<a href="#debouncejs">debounce.js</a>
+<a href="#deepClonejs">deepClone.js</a>
+<a href="#linkedListjs">linkedList.js</a>
+<a href="#stackjs">stack.js</a>
+<a href="#throttlejs">throttle.js</a>
+<a href="#instanceofjs">instanceof.js</a>
 
 ## 1.两数之和.js
 ``` javascript
@@ -63,44 +81,6 @@ var maxDepth = function(root) {
 ```
 
 
-## 141.环形链表.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=141 lang=javascript
- *
- * [141] 环形链表
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-
-/**
- * @param {ListNode} head
- * @return {boolean}
- */
-var hasCycle = function(head) {
-    if(!head) return false
-    let slow = head
-    let fast = head
-    while(fast && fast.next){
-        slow = slow.next
-        fast = fast.next.next
-        if(fast === slow) return true
-    }
-    return false
-};
-// @lc code=end
-
-
-```
-
-
 ## 1419.数青蛙.js
 ``` javascript
 /*
@@ -115,6 +95,35 @@ var hasCycle = function(head) {
  * @return {number}
  */
 var minNumberOfFrogs = function(croakOfFrogs) {
+
+};
+// @lc code=end
+
+
+```
+
+
+## 2095.删除链表的中间节点.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=2095 lang=javascript
+ *
+ * [2095] 删除链表的中间节点
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteMiddle = function(head) {
 
 };
 // @lc code=end
@@ -187,28 +196,37 @@ var isValid = function(s) {
 ```
 
 
-## 2095.删除链表的中间节点.js
+## 141.环形链表.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=2095 lang=javascript
+ * @lc app=leetcode.cn id=141 lang=javascript
  *
- * [2095] 删除链表的中间节点
+ * [141] 环形链表
  */
 
 // @lc code=start
 /**
  * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
  * }
  */
+
 /**
  * @param {ListNode} head
- * @return {ListNode}
+ * @return {boolean}
  */
-var deleteMiddle = function(head) {
-
+var hasCycle = function(head) {
+    if(!head) return false
+    let slow = head
+    let fast = head
+    while(fast && fast.next){
+        slow = slow.next
+        fast = fast.next.next
+        if(fast === slow) return true
+    }
+    return false
 };
 // @lc code=end
 
@@ -513,24 +531,6 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 ```
 
 
-## instanceof.js
-``` javascript
-function ins(a,b){
-    //指针
- let i = a
- while(i){
-   if(i===b.prototype) return true
-   i=i.__proto__
- }
- return false 
-}
-
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
-```
-
-
 ## linkedList.js
 ``` javascript
 // 链表
@@ -602,5 +602,23 @@ const throttle = (fn,wait)=>{
         }
     }
 }
+```
+
+
+## instanceof.js
+``` javascript
+function ins(a,b){
+    //指针
+ let i = a
+ while(i){
+   if(i===b.prototype) return true
+   i=i.__proto__
+ }
+ return false 
+}
+
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
 ```
 
