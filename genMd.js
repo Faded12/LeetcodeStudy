@@ -12,7 +12,8 @@ const generateInstall = (dirPath = '.') => {
         // toReadFile(item, name)
         fs.readFile(path.join(__dirname, item), 'utf8', function (err, data) {
             if (err) throw err;
-            mdData += `## ${name}
+            mdData += `
+## ${name}
 \`\`\` javascript
 ${data}
 \`\`\`
