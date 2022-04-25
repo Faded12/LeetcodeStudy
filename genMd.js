@@ -5,29 +5,41 @@ const path = require('path');
 const generateInstall = (dirPath = '.') => {
     const files = glob.sync(`${dirPath}/*.js`);
     var mdData = ''
-
-    files.map((item) => {
-        if(item.indexOf('genMd')>-1) return
+    var hrefList = ''
+    const listRes = files.map(async (item) => {
+        if (item.indexOf('genMd') > -1) return
         const name = item.split('/')[1]
-        // toReadFile(item, name)
-        fs.readFile(path.join(__dirname, item), 'utf8', function (err, data) {
-            if (err) throw err;
-            mdData += `
+        let data = await read(item)
+        hrefList += `
+<a href="#${name.split('.').join('')}">${name}</a></br>`
+        mdData += `
 ## ${name}
 \`\`\` javascript
 ${data}
 \`\`\`
 
 `
-        })
     })
 
-    setTimeout(()=>{
-        fs.writeFileSync(path.join(__dirname, `./README.md`), mdData, 'utf8', (err) => {
+    Promise.all(listRes).then(() => {
+        let data = hrefList + mdData
+        fs.writeFile(path.join(__dirname, `./README.md`), data, 'utf8', (err) => {
             if (err) throw err;
         });
-    },1000)
-    
+    })
+
+
+    function read(dir) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(path.join(__dirname, dir), 'utf-8', (err, data) => {
+                if (err) {
+                    reject()
+                } else {
+                    resolve(data)
+                }
+            })
+        })
+    }
 }
 
 

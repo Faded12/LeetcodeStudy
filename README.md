@@ -1,4 +1,24 @@
 
+<a href="#1两数之和js">1.两数之和.js</a></br>
+<a href="#1419数青蛙js">1419.数青蛙.js</a></br>
+<a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
+<a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a></br>
+<a href="#141环形链表js">141.环形链表.js</a></br>
+<a href="#20有效的括号js">20.有效的括号.js</a></br>
+<a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a></br>
+<a href="#237删除链表中的节点js">237.删除链表中的节点.js</a></br>
+<a href="#46全排列js">46.全排列.js</a></br>
+<a href="#509斐波那契数js">509.斐波那契数.js</a></br>
+<a href="#71简化路径js">71.简化路径.js</a></br>
+<a href="#70爬楼梯js">70.爬楼梯.js</a></br>
+<a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a></br>
+<a href="#constjs">const.js</a></br>
+<a href="#debouncejs">debounce.js</a></br>
+<a href="#deepClonejs">deepClone.js</a></br>
+<a href="#instanceofjs">instanceof.js</a></br>
+<a href="#linkedListjs">linkedList.js</a></br>
+<a href="#throttlejs">throttle.js</a></br>
+<a href="#stackjs">stack.js</a></br>
 ## 1.两数之和.js
 ``` javascript
 /*
@@ -23,6 +43,28 @@ var twoSum = function(nums, target) {
             map[nums[i]] = i
         }
     }
+};
+// @lc code=end
+
+
+```
+
+
+## 1419.数青蛙.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1419 lang=javascript
+ *
+ * [1419] 数青蛙
+ */
+
+// @lc code=start
+/**
+ * @param {string} croakOfFrogs
+ * @return {number}
+ */
+var minNumberOfFrogs = function(croakOfFrogs) {
+
 };
 // @lc code=end
 
@@ -61,6 +103,33 @@ var maxDepth = function(root) {
 ```
 
 
+## 1672.最富有客户的资产总量.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1672 lang=javascript
+ *
+ * [1672] 最富有客户的资产总量
+ */
+
+// @lc code=start
+/**
+ * @param {number[][]} accounts
+ * @return {number}
+ */
+var maximumWealth = function(accounts) {
+    let max = 0;
+    while(accounts.length){
+        let cur = accounts.pop();
+        max = Math.max(cur.reduce((l,n)=>l+n),max)
+    }
+    return max
+};
+// @lc code=end
+
+
+```
+
+
 ## 141.环形链表.js
 ``` javascript
 /*
@@ -92,55 +161,6 @@ var hasCycle = function(head) {
         if(fast === slow) return true
     }
     return false
-};
-// @lc code=end
-
-
-```
-
-
-## 1419.数青蛙.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=1419 lang=javascript
- *
- * [1419] 数青蛙
- */
-
-// @lc code=start
-/**
- * @param {string} croakOfFrogs
- * @return {number}
- */
-var minNumberOfFrogs = function(croakOfFrogs) {
-
-};
-// @lc code=end
-
-
-```
-
-
-## 1672.最富有客户的资产总量.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=1672 lang=javascript
- *
- * [1672] 最富有客户的资产总量
- */
-
-// @lc code=start
-/**
- * @param {number[][]} accounts
- * @return {number}
- */
-var maximumWealth = function(accounts) {
-    let max = 0;
-    while(accounts.length){
-        let cur = accounts.pop();
-        max = Math.max(cur.reduce((l,n)=>l+n),max)
-    }
-    return max
 };
 // @lc code=end
 
@@ -294,32 +314,6 @@ var fib = function(n) {
 ```
 
 
-## 70.爬楼梯.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=70 lang=javascript
- *
- * [70] 爬楼梯
- */
-
-// @lc code=start
-/**
- * @param {number} n
- * @return {number}
- */
-var climbStairs = function(n) {
-    let res = [1,1]
-    for(let i = 2;i<=n;i++){
-        res[i] = res[i-1] + res[i-2]
-    }
-    return res[n]
-};
-// @lc code=end
-
-
-```
-
-
 ## 71.简化路径.js
 ``` javascript
 /*
@@ -345,6 +339,32 @@ var simplifyPath = function(path) {
         }
     }
     return '/'+stack.join('/')
+};
+// @lc code=end
+
+
+```
+
+
+## 70.爬楼梯.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=70 lang=javascript
+ *
+ * [70] 爬楼梯
+ */
+
+// @lc code=start
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairs = function(n) {
+    let res = [1,1]
+    for(let i = 2;i<=n;i++){
+        res[i] = res[i-1] + res[i-2]
+    }
+    return res[n]
 };
 // @lc code=end
 
@@ -566,6 +586,22 @@ console.log(arr)
 ```
 
 
+## throttle.js
+``` javascript
+// 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
+        }
+    }
+}
+```
+
+
 ## stack.js
 ``` javascript
 // const stack = [];
@@ -584,21 +620,5 @@ function f2(){
 function f3(){}
 
 f1()
-```
-
-
-## throttle.js
-``` javascript
-// 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
-        }
-    }
-}
 ```
 
