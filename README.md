@@ -1,55 +1,24 @@
 
-<a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
 <a href="#1两数之和js">1.两数之和.js</a></br>
+<a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
 <a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a></br>
-<a href="#141环形链表js">141.环形链表.js</a></br>
 <a href="#20有效的括号js">20.有效的括号.js</a></br>
+<a href="#141环形链表js">141.环形链表.js</a></br>
 <a href="#1419数青蛙js">1419.数青蛙.js</a></br>
 <a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a></br>
 <a href="#237删除链表中的节点js">237.删除链表中的节点.js</a></br>
+<a href="#46全排列js">46.全排列.js</a></br>
 <a href="#509斐波那契数js">509.斐波那契数.js</a></br>
 <a href="#70爬楼梯js">70.爬楼梯.js</a></br>
 <a href="#71简化路径js">71.简化路径.js</a></br>
 <a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a></br>
 <a href="#constjs">const.js</a></br>
 <a href="#debouncejs">debounce.js</a></br>
-<a href="#deepClonejs">deepClone.js</a></br>
 <a href="#instanceofjs">instanceof.js</a></br>
 <a href="#linkedListjs">linkedList.js</a></br>
 <a href="#stackjs">stack.js</a></br>
+<a href="#deepClonejs">deepClone.js</a></br>
 <a href="#throttlejs">throttle.js</a></br>
-<a href="#46全排列js">46.全排列.js</a></br>
-## 104.二叉树的最大深度.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=104 lang=javascript
- *
- * [104] 二叉树的最大深度
- */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var maxDepth = function(root) {
-    if(!root) return 0
-    return Math.max(maxDepth(root.left),maxDepth(root.right)) +1
-};
-// @lc code=end
-
-
-```
-
-
 ## 1.两数之和.js
 ``` javascript
 /*
@@ -81,6 +50,37 @@ var twoSum = function(nums, target) {
 ```
 
 
+## 104.二叉树的最大深度.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=104 lang=javascript
+ *
+ * [104] 二叉树的最大深度
+ */
+
+// @lc code=start
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+    if(!root) return 0
+    return Math.max(maxDepth(root.left),maxDepth(root.right)) +1
+};
+// @lc code=end
+
+
+```
+
+
 ## 1672.最富有客户的资产总量.js
 ``` javascript
 /*
@@ -101,6 +101,43 @@ var maximumWealth = function(accounts) {
         max = Math.max(cur.reduce((l,n)=>l+n),max)
     }
     return max
+};
+// @lc code=end
+
+
+```
+
+
+## 20.有效的括号.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=20 lang=javascript
+ *
+ * [20] 有效的括号
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    let stack = []
+    const obj = {
+        '{':'}',
+        '[':']',
+        '(':')',
+    }
+    for(let i=0;i<s.length;i++){
+        if(s[i] in obj){
+            stack.push(s[i])
+        }else{
+            if(s[i] !== obj[stack.pop()]){
+                return false
+            }
+        }
+    }
+    return !stack.length
 };
 // @lc code=end
 
@@ -139,43 +176,6 @@ var hasCycle = function(head) {
         if(fast === slow) return true
     }
     return false
-};
-// @lc code=end
-
-
-```
-
-
-## 20.有效的括号.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=20 lang=javascript
- *
- * [20] 有效的括号
- */
-
-// @lc code=start
-/**
- * @param {string} s
- * @return {boolean}
- */
-var isValid = function(s) {
-    let stack = []
-    const obj = {
-        '{':'}',
-        '[':']',
-        '(':')',
-    }
-    for(let i=0;i<s.length;i++){
-        if(s[i] in obj){
-            stack.push(s[i])
-        }else{
-            if(s[i] !== obj[stack.pop()]){
-                return false
-            }
-        }
-    }
-    return !stack.length
 };
 // @lc code=end
 
@@ -257,6 +257,28 @@ var deleteMiddle = function(head) {
 var deleteNode = function(node) {
     node.val = node.next.val
     node.next = node.next.next
+};
+// @lc code=end
+
+
+```
+
+
+## 46.全排列.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=46 lang=javascript
+ *
+ * [46] 全排列
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permute = function(nums) {
+
 };
 // @lc code=end
 
@@ -444,71 +466,6 @@ const debounce = (fn, wait) => {
 ```
 
 
-## deepClone.js
-``` javascript
-function deepClone(obj) {
-    // 如果是 值类型 或 null，则直接return
-    if (typeof obj !== 'object' || obj === null) {
-        return obj
-    }
-    // 定义结果对象
-    let copy = {}
-    // 如果对象是数组，则定义结果数组
-    if (obj.constructor === Array) {
-        copy = []
-    }
-    // 遍历对象的key
-    for (let key in obj) {
-        // 如果key是对象的自有属性
-        if (obj.hasOwnProperty(key)) {
-            // 递归调用深拷贝方法
-            copy[key] = deepClone(obj[key])
-        }
-    }
-    return copy
-}
-
-function deepClone(obj) {
-    if (typeof obj !== 'object' || obj === null) return obj;
-    let copy = {}
-    if (obj.constructor === Array) {
-        copy = []
-    }
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            copy[key] = deepClone(obj[key])
-        }
-    }
-    return obj
-}
-
-function deepClone(obj) {
-    if (typeof obj !== 'object' || obj === null) return obj;
-    let copy = {}
-    if (obj.constructor === Array) {
-        copy = []
-    }
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            copy[key] = deepClone(obj[key])
-        }
-    }
-    return copy
-}
-
-
-// 简洁版本
-// 简单版：
-
-const newObj = JSON.parse(JSON.stringify(oldObj));
-// 局限性：
-
-// 他无法实现对函数 、RegExp等特殊对象的克隆
-// 会抛弃对象的constructor,所有的构造函数会指向Object
-// 对象有循环引用,会报错
-```
-
-
 ## instanceof.js
 ``` javascript
 function ins(a,b){
@@ -585,6 +542,71 @@ f1()
 ```
 
 
+## deepClone.js
+``` javascript
+function deepClone(obj) {
+    // 如果是 值类型 或 null，则直接return
+    if (typeof obj !== 'object' || obj === null) {
+        return obj
+    }
+    // 定义结果对象
+    let copy = {}
+    // 如果对象是数组，则定义结果数组
+    if (obj.constructor === Array) {
+        copy = []
+    }
+    // 遍历对象的key
+    for (let key in obj) {
+        // 如果key是对象的自有属性
+        if (obj.hasOwnProperty(key)) {
+            // 递归调用深拷贝方法
+            copy[key] = deepClone(obj[key])
+        }
+    }
+    return copy
+}
+
+function deepClone(obj) {
+    if (typeof obj !== 'object' || obj === null) return obj;
+    let copy = {}
+    if (obj.constructor === Array) {
+        copy = []
+    }
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            copy[key] = deepClone(obj[key])
+        }
+    }
+    return obj
+}
+
+function deepClone(obj) {
+    if (typeof obj !== 'object' || obj === null) return obj;
+    let copy = {}
+    if (obj.constructor === Array) {
+        copy = []
+    }
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            copy[key] = deepClone(obj[key])
+        }
+    }
+    return copy
+}
+
+
+// 简洁版本
+// 简单版：
+
+const newObj = JSON.parse(JSON.stringify(oldObj));
+// 局限性：
+
+// 他无法实现对函数 、RegExp等特殊对象的克隆
+// 会抛弃对象的constructor,所有的构造函数会指向Object
+// 对象有循环引用,会报错
+```
+
+
 ## throttle.js
 ``` javascript
 // 节流
@@ -598,27 +620,5 @@ const throttle = (fn,wait)=>{
         }
     }
 }
-```
-
-
-## 46.全排列.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=46 lang=javascript
- *
- * [46] 全排列
- */
-
-// @lc code=start
-/**
- * @param {number[]} nums
- * @return {number[][]}
- */
-var permute = function(nums) {
-
-};
-// @lc code=end
-
-
 ```
 
