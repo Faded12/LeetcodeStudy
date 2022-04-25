@@ -1,108 +1,26 @@
 
-<a href="#1两数之和js">1.两数之和.js</a></br>
-<a href="#1419数青蛙js">1419.数青蛙.js</a></br>
-<a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
 <a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a></br>
 <a href="#141环形链表js">141.环形链表.js</a></br>
+<a href="#1419数青蛙js">1419.数青蛙.js</a></br>
+<a href="#1两数之和js">1.两数之和.js</a></br>
+<a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
+<a href="#242有效的字母异位词js">242.有效的字母异位词.js</a></br>
+<a href="#237删除链表中的节点js">237.删除链表中的节点.js</a></br>
 <a href="#20有效的括号js">20.有效的括号.js</a></br>
 <a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a></br>
-<a href="#237删除链表中的节点js">237.删除链表中的节点.js</a></br>
-<a href="#46全排列js">46.全排列.js</a></br>
 <a href="#509斐波那契数js">509.斐波那契数.js</a></br>
-<a href="#71简化路径js">71.简化路径.js</a></br>
+<a href="#46全排列js">46.全排列.js</a></br>
 <a href="#70爬楼梯js">70.爬楼梯.js</a></br>
+<a href="#9回文数js">9.回文数.js</a></br>
 <a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a></br>
+<a href="#71简化路径js">71.简化路径.js</a></br>
+<a href="#deepClonejs">deepClone.js</a></br>
 <a href="#constjs">const.js</a></br>
 <a href="#debouncejs">debounce.js</a></br>
-<a href="#deepClonejs">deepClone.js</a></br>
 <a href="#instanceofjs">instanceof.js</a></br>
 <a href="#linkedListjs">linkedList.js</a></br>
-<a href="#throttlejs">throttle.js</a></br>
 <a href="#stackjs">stack.js</a></br>
-## 1.两数之和.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=1 lang=javascript
- *
- * [1] 两数之和
- */
-
-// @lc code=start
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let map = {}
-    for(let i = 0;i<nums.length;i++){
-        let res = target - nums[i]
-        if(res in map){
-            return [map[res],i]
-        }else{
-            map[nums[i]] = i
-        }
-    }
-};
-// @lc code=end
-
-
-```
-
-
-## 1419.数青蛙.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=1419 lang=javascript
- *
- * [1419] 数青蛙
- */
-
-// @lc code=start
-/**
- * @param {string} croakOfFrogs
- * @return {number}
- */
-var minNumberOfFrogs = function(croakOfFrogs) {
-
-};
-// @lc code=end
-
-
-```
-
-
-## 104.二叉树的最大深度.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=104 lang=javascript
- *
- * [104] 二叉树的最大深度
- */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var maxDepth = function(root) {
-    if(!root) return 0
-    return Math.max(maxDepth(root.left),maxDepth(root.right)) +1
-};
-// @lc code=end
-
-
-```
-
-
+<a href="#throttlejs">throttle.js</a></br>
 ## 1672.最富有客户的资产总量.js
 ``` javascript
 /*
@@ -161,6 +79,143 @@ var hasCycle = function(head) {
         if(fast === slow) return true
     }
     return false
+};
+// @lc code=end
+
+
+```
+
+
+## 1419.数青蛙.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1419 lang=javascript
+ *
+ * [1419] 数青蛙
+ */
+
+// @lc code=start
+/**
+ * @param {string} croakOfFrogs
+ * @return {number}
+ */
+var minNumberOfFrogs = function(croakOfFrogs) {
+
+};
+// @lc code=end
+
+
+```
+
+
+## 1.两数之和.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1 lang=javascript
+ *
+ * [1] 两数之和
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let map = {}
+    for(let i = 0;i<nums.length;i++){
+        let res = target - nums[i]
+        if(res in map){
+            return [map[res],i]
+        }else{
+            map[nums[i]] = i
+        }
+    }
+};
+// @lc code=end
+
+
+```
+
+
+## 104.二叉树的最大深度.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=104 lang=javascript
+ *
+ * [104] 二叉树的最大深度
+ */
+
+// @lc code=start
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+    if(!root) return 0
+    return Math.max(maxDepth(root.left),maxDepth(root.right)) +1
+};
+// @lc code=end
+
+
+```
+
+
+## 242.有效的字母异位词.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=242 lang=javascript
+ *
+ * [242] 有效的字母异位词
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    
+};
+// @lc code=end
+
+
+```
+
+
+## 237.删除链表中的节点.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=237 lang=javascript
+ *
+ * [237] 删除链表中的节点
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} node
+ * @return {void} Do not return anything, modify node in-place instead.
+ */
+var deleteNode = function(node) {
+    node.val = node.next.val
+    node.next = node.next.next
 };
 // @lc code=end
 
@@ -234,29 +289,27 @@ var deleteMiddle = function(head) {
 ```
 
 
-## 237.删除链表中的节点.js
+## 509.斐波那契数.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=237 lang=javascript
+ * @lc app=leetcode.cn id=509 lang=javascript
  *
- * [237] 删除链表中的节点
+ * [509] 斐波那契数
  */
 
 // @lc code=start
 /**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
+ * @param {number} n
+ * @return {number}
  */
-/**
- * @param {ListNode} node
- * @return {void} Do not return anything, modify node in-place instead.
- */
-var deleteNode = function(node) {
-    node.val = node.next.val
-    node.next = node.next.next
+var fib = function(n) {
+    let arr = [0,1]
+    let i = 2
+    while(i<=n){
+        arr[i] = arr[i-1] + arr[i-2]
+        ++i
+    }
+    return arr[n]
 };
 // @lc code=end
 
@@ -286,66 +339,6 @@ var permute = function(nums) {
 ```
 
 
-## 509.斐波那契数.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=509 lang=javascript
- *
- * [509] 斐波那契数
- */
-
-// @lc code=start
-/**
- * @param {number} n
- * @return {number}
- */
-var fib = function(n) {
-    let arr = [0,1]
-    let i = 2
-    while(i<=n){
-        arr[i] = arr[i-1] + arr[i-2]
-        ++i
-    }
-    return arr[n]
-};
-// @lc code=end
-
-
-```
-
-
-## 71.简化路径.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=71 lang=javascript
- *
- * [71] 简化路径
- */
-
-// @lc code=start
-/**
- * @param {string} path
- * @return {string}
- */
-var simplifyPath = function(path) {
-    let stack =[]
-    let paths = path.split('/')
-    for(let i=0;i<paths.length;i++){
-        const p =paths[i]
-        if(p=='..'){
-            stack.pop()
-        }else if(p && p!=='.'){
-            stack.push(p)
-        }
-    }
-    return '/'+stack.join('/')
-};
-// @lc code=end
-
-
-```
-
-
 ## 70.爬楼梯.js
 ``` javascript
 /*
@@ -365,6 +358,28 @@ var climbStairs = function(n) {
         res[i] = res[i-1] + res[i-2]
     }
     return res[n]
+};
+// @lc code=end
+
+
+```
+
+
+## 9.回文数.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=9 lang=javascript
+ *
+ * [9] 回文数
+ */
+
+// @lc code=start
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    
 };
 // @lc code=end
 
@@ -409,60 +424,35 @@ var deleteDuplicates = function(head) {
 ```
 
 
-## const.js
+## 71.简化路径.js
 ``` javascript
-var __const = function __const(data, value) {
-    window.data = value // 把要定义的data挂载到window下，并赋值value
-    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
-        enumerable: false,
-        configurable: false,
-        get: function () {
-            return value
-        },
-        set: function (data) {
-            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
-                throw new TypeError('Assignment to constant variable.')
-            } else {
-                return value
-            }
+/*
+ * @lc app=leetcode.cn id=71 lang=javascript
+ *
+ * [71] 简化路径
+ */
+
+// @lc code=start
+/**
+ * @param {string} path
+ * @return {string}
+ */
+var simplifyPath = function(path) {
+    let stack =[]
+    let paths = path.split('/')
+    for(let i=0;i<paths.length;i++){
+        const p =paths[i]
+        if(p=='..'){
+            stack.pop()
+        }else if(p && p!=='.'){
+            stack.push(p)
         }
-    })
-}
-__const('a', 10)
-console.log(a)
-delete a
-console.log(a)
-for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
-    if (item === 'a') { // 因为不可枚举，所以不执行
-        console.log(window[item])
     }
-}
-a = 20 // 报错
-```
+    return '/'+stack.join('/')
+};
+// @lc code=end
 
 
-## debounce.js
-``` javascript
-// 防抖
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
-
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
 ```
 
 
@@ -531,6 +521,63 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 ```
 
 
+## const.js
+``` javascript
+var __const = function __const(data, value) {
+    window.data = value // 把要定义的data挂载到window下，并赋值value
+    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
+        enumerable: false,
+        configurable: false,
+        get: function () {
+            return value
+        },
+        set: function (data) {
+            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
+                throw new TypeError('Assignment to constant variable.')
+            } else {
+                return value
+            }
+        }
+    })
+}
+__const('a', 10)
+console.log(a)
+delete a
+console.log(a)
+for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
+    if (item === 'a') { // 因为不可枚举，所以不执行
+        console.log(window[item])
+    }
+}
+a = 20 // 报错
+```
+
+
+## debounce.js
+``` javascript
+// 防抖
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+```
+
+
 ## instanceof.js
 ``` javascript
 function ins(a,b){
@@ -586,22 +633,6 @@ console.log(arr)
 ```
 
 
-## throttle.js
-``` javascript
-// 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
-        }
-    }
-}
-```
-
-
 ## stack.js
 ``` javascript
 // const stack = [];
@@ -620,5 +651,21 @@ function f2(){
 function f3(){}
 
 f1()
+```
+
+
+## throttle.js
+``` javascript
+// 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
+        }
+    }
+}
 ```
 
