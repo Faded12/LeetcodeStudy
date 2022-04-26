@@ -1,91 +1,29 @@
 
-<a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a></br>
-<a href="#141环形链表js">141.环形链表.js</a></br>
 <a href="#1419数青蛙js">1419.数青蛙.js</a></br>
 <a href="#1两数之和js">1.两数之和.js</a></br>
+<a href="#1221分割平衡字符串js">1221.分割平衡字符串.js</a></br>
+<a href="#141环形链表js">141.环形链表.js</a></br>
+<a href="#19删除链表的倒数第-n-个结点js">19.删除链表的倒数第-n-个结点.js</a></br>
 <a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
+<a href="#20有效的括号js">20.有效的括号.js</a></br>
+<a href="#1827最少操作使数组递增js">1827.最少操作使数组递增.js</a></br>
+<a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a></br>
 <a href="#242有效的字母异位词js">242.有效的字母异位词.js</a></br>
 <a href="#237删除链表中的节点js">237.删除链表中的节点.js</a></br>
-<a href="#20有效的括号js">20.有效的括号.js</a></br>
-<a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a></br>
-<a href="#509斐波那契数js">509.斐波那契数.js</a></br>
 <a href="#46全排列js">46.全排列.js</a></br>
 <a href="#70爬楼梯js">70.爬楼梯.js</a></br>
+<a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a></br>
+<a href="#509斐波那契数js">509.斐波那契数.js</a></br>
+<a href="#71简化路径js">71.简化路径.js</a></br>
 <a href="#9回文数js">9.回文数.js</a></br>
 <a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a></br>
-<a href="#71简化路径js">71.简化路径.js</a></br>
-<a href="#deepClonejs">deepClone.js</a></br>
-<a href="#constjs">const.js</a></br>
 <a href="#debouncejs">debounce.js</a></br>
+<a href="#constjs">const.js</a></br>
 <a href="#instanceofjs">instanceof.js</a></br>
-<a href="#linkedListjs">linkedList.js</a></br>
+<a href="#deepClonejs">deepClone.js</a></br>
 <a href="#stackjs">stack.js</a></br>
+<a href="#linkedListjs">linkedList.js</a></br>
 <a href="#throttlejs">throttle.js</a></br>
-## 1672.最富有客户的资产总量.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=1672 lang=javascript
- *
- * [1672] 最富有客户的资产总量
- */
-
-// @lc code=start
-/**
- * @param {number[][]} accounts
- * @return {number}
- */
-var maximumWealth = function(accounts) {
-    let max = 0;
-    while(accounts.length){
-        let cur = accounts.pop();
-        max = Math.max(cur.reduce((l,n)=>l+n),max)
-    }
-    return max
-};
-// @lc code=end
-
-
-```
-
-
-## 141.环形链表.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=141 lang=javascript
- *
- * [141] 环形链表
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-
-/**
- * @param {ListNode} head
- * @return {boolean}
- */
-var hasCycle = function(head) {
-    if(!head) return false
-    let slow = head
-    let fast = head
-    while(fast && fast.next){
-        slow = slow.next
-        fast = fast.next.next
-        if(fast === slow) return true
-    }
-    return false
-};
-// @lc code=end
-
-
-```
-
-
 ## 1419.数青蛙.js
 ``` javascript
 /*
@@ -139,6 +77,101 @@ var twoSum = function(nums, target) {
 ```
 
 
+## 1221.分割平衡字符串.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1221 lang=javascript
+ *
+ * [1221] 分割平衡字符串
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var balancedStringSplit = function(s) {
+    let res = 0 ,n = 0
+    for(let i = 0;i<s.length;i++){
+        s[i]==='R' ? n++ : n--
+        if(n===0) res++
+    }
+    return res
+};
+// @lc code=end
+
+
+```
+
+
+## 141.环形链表.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=141 lang=javascript
+ *
+ * [141] 环形链表
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+    if(!head) return false
+    let slow = head
+    let fast = head
+    while(fast && fast.next){
+        slow = slow.next
+        fast = fast.next.next
+        if(fast === slow) return true
+    }
+    return false
+};
+// @lc code=end
+
+
+```
+
+
+## 19.删除链表的倒数第-n-个结点.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=19 lang=javascript
+ *
+ * [19] 删除链表的倒数第 N 个结点
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+
+};
+// @lc code=end
+
+
+```
+
+
 ## 104.二叉树的最大深度.js
 ``` javascript
 /*
@@ -163,6 +196,100 @@ var twoSum = function(nums, target) {
 var maxDepth = function(root) {
     if(!root) return 0
     return Math.max(maxDepth(root.left),maxDepth(root.right)) +1
+};
+// @lc code=end
+
+
+```
+
+
+## 20.有效的括号.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=20 lang=javascript
+ *
+ * [20] 有效的括号
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    let stack = []
+    const obj = {
+        '{':'}',
+        '[':']',
+        '(':')',
+    }
+    for(let i=0;i<s.length;i++){
+        if(s[i] in obj){
+            stack.push(s[i])
+        }else{
+            if(s[i] !== obj[stack.pop()]){
+                return false
+            }
+        }
+    }
+    return !stack.length
+};
+// @lc code=end
+
+
+```
+
+
+## 1827.最少操作使数组递增.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1827 lang=javascript
+ *
+ * [1827] 最少操作使数组递增
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var minOperations = function(nums) {
+    let res = 0
+    for(let i = 0;i<nums.length;i++){
+        if(nums[i]>=nums[i+1]){
+            let n = nums[i] - nums[i+1] + 1
+            nums[i+1] = n + nums[i+1]
+            res += n
+        }
+    }
+    return res
+};
+// @lc code=end
+
+
+```
+
+
+## 1672.最富有客户的资产总量.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1672 lang=javascript
+ *
+ * [1672] 最富有客户的资产总量
+ */
+
+// @lc code=start
+/**
+ * @param {number[][]} accounts
+ * @return {number}
+ */
+var maximumWealth = function(accounts) {
+    let max = 0;
+    while(accounts.length){
+        let cur = accounts.pop();
+        max = Math.max(cur.reduce((l,n)=>l+n),max)
+    }
+    return max
 };
 // @lc code=end
 
@@ -223,36 +350,47 @@ var deleteNode = function(node) {
 ```
 
 
-## 20.有效的括号.js
+## 46.全排列.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=20 lang=javascript
+ * @lc app=leetcode.cn id=46 lang=javascript
  *
- * [20] 有效的括号
+ * [46] 全排列
  */
 
 // @lc code=start
 /**
- * @param {string} s
- * @return {boolean}
+ * @param {number[]} nums
+ * @return {number[][]}
  */
-var isValid = function(s) {
-    let stack = []
-    const obj = {
-        '{':'}',
-        '[':']',
-        '(':')',
+var permute = function(nums) {
+
+};
+// @lc code=end
+
+
+```
+
+
+## 70.爬楼梯.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=70 lang=javascript
+ *
+ * [70] 爬楼梯
+ */
+
+// @lc code=start
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairs = function(n) {
+    let res = [1,1]
+    for(let i = 2;i<=n;i++){
+        res[i] = res[i-1] + res[i-2]
     }
-    for(let i=0;i<s.length;i++){
-        if(s[i] in obj){
-            stack.push(s[i])
-        }else{
-            if(s[i] !== obj[stack.pop()]){
-                return false
-            }
-        }
-    }
-    return !stack.length
+    return res[n]
 };
 // @lc code=end
 
@@ -317,47 +455,31 @@ var fib = function(n) {
 ```
 
 
-## 46.全排列.js
+## 71.简化路径.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=46 lang=javascript
+ * @lc app=leetcode.cn id=71 lang=javascript
  *
- * [46] 全排列
+ * [71] 简化路径
  */
 
 // @lc code=start
 /**
- * @param {number[]} nums
- * @return {number[][]}
+ * @param {string} path
+ * @return {string}
  */
-var permute = function(nums) {
-
-};
-// @lc code=end
-
-
-```
-
-
-## 70.爬楼梯.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=70 lang=javascript
- *
- * [70] 爬楼梯
- */
-
-// @lc code=start
-/**
- * @param {number} n
- * @return {number}
- */
-var climbStairs = function(n) {
-    let res = [1,1]
-    for(let i = 2;i<=n;i++){
-        res[i] = res[i-1] + res[i-2]
+var simplifyPath = function(path) {
+    let stack =[]
+    let paths = path.split('/')
+    for(let i=0;i<paths.length;i++){
+        const p =paths[i]
+        if(p=='..'){
+            stack.pop()
+        }else if(p && p!=='.'){
+            stack.push(p)
+        }
     }
-    return res[n]
+    return '/'+stack.join('/')
 };
 // @lc code=end
 
@@ -424,35 +546,78 @@ var deleteDuplicates = function(head) {
 ```
 
 
-## 71.简化路径.js
+## debounce.js
 ``` javascript
-/*
- * @lc app=leetcode.cn id=71 lang=javascript
- *
- * [71] 简化路径
- */
-
-// @lc code=start
-/**
- * @param {string} path
- * @return {string}
- */
-var simplifyPath = function(path) {
-    let stack =[]
-    let paths = path.split('/')
-    for(let i=0;i<paths.length;i++){
-        const p =paths[i]
-        if(p=='..'){
-            stack.pop()
-        }else if(p && p!=='.'){
-            stack.push(p)
-        }
+// 防抖
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
     }
-    return '/'+stack.join('/')
-};
-// @lc code=end
+}
+
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
+}
+```
 
 
+## const.js
+``` javascript
+var __const = function __const(data, value) {
+    window.data = value // 把要定义的data挂载到window下，并赋值value
+    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
+        enumerable: false,
+        configurable: false,
+        get: function () {
+            return value
+        },
+        set: function (data) {
+            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
+                throw new TypeError('Assignment to constant variable.')
+            } else {
+                return value
+            }
+        }
+    })
+}
+__const('a', 10)
+console.log(a)
+delete a
+console.log(a)
+for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
+    if (item === 'a') { // 因为不可枚举，所以不执行
+        console.log(window[item])
+    }
+}
+a = 20 // 报错
+```
+
+
+## instanceof.js
+``` javascript
+function ins(a,b){
+    //指针
+ let i = a
+ while(i){
+   if(i===b.prototype) return true
+   i=i.__proto__
+ }
+ return false 
+}
+
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
 ```
 
 
@@ -521,78 +686,24 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 ```
 
 
-## const.js
+## stack.js
 ``` javascript
-var __const = function __const(data, value) {
-    window.data = value // 把要定义的data挂载到window下，并赋值value
-    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
-        enumerable: false,
-        configurable: false,
-        get: function () {
-            return value
-        },
-        set: function (data) {
-            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
-                throw new TypeError('Assignment to constant variable.')
-            } else {
-                return value
-            }
-        }
-    })
+// const stack = [];
+// stack.push(1);
+// stack.push(2);
+// const item1 = stack.pop();
+// const item2 = stack.pop();
+
+// 调用堆栈
+function f1(){
+    f2()
 }
-__const('a', 10)
-console.log(a)
-delete a
-console.log(a)
-for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
-    if (item === 'a') { // 因为不可枚举，所以不执行
-        console.log(window[item])
-    }
+function f2(){
+    f3()
 }
-a = 20 // 报错
-```
+function f3(){}
 
-
-## debounce.js
-``` javascript
-// 防抖
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
-
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
-```
-
-
-## instanceof.js
-``` javascript
-function ins(a,b){
-    //指针
- let i = a
- while(i){
-   if(i===b.prototype) return true
-   i=i.__proto__
- }
- return false 
-}
-
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
+f1()
 ```
 
 
@@ -630,27 +741,6 @@ function dg2(obj){
 }
 dg2(a)
 console.log(arr)
-```
-
-
-## stack.js
-``` javascript
-// const stack = [];
-// stack.push(1);
-// stack.push(2);
-// const item1 = stack.pop();
-// const item2 = stack.pop();
-
-// 调用堆栈
-function f1(){
-    f2()
-}
-function f2(){
-    f3()
-}
-function f3(){}
-
-f1()
 ```
 
 
