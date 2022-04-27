@@ -35,17 +35,14 @@ function deepClone(obj) {
 }
 
 function deepClone(obj) {
-    if (typeof obj !== 'object' || obj === null) return obj;
-    let copy = {}
-    if (obj.constructor === Array) {
-        copy = []
-    }
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
+    if(typeof obj !== 'object' || obj === null) return obj;
+    let copy = obj.constructor === Array ? [] : {};
+    for(let key in obj){
+        if(obj.hasOwnProperty(key)){
             copy[key] = deepClone(obj[key])
         }
     }
-    return copy
+    return obj
 }
 
 
