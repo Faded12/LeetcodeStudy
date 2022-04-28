@@ -1,134 +1,40 @@
 
-<a href="#141环形链表js">141.环形链表.js</a></br>
-<a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
-<a href="#1221分割平衡字符串js">1221.分割平衡字符串.js</a></br>
-<a href="#145二叉树的后序遍历js">145.二叉树的后序遍历.js</a></br>
+<a href="#144二叉树的前序遍历js">144.二叉树的前序遍历.js</a></br>
 <a href="#1419数青蛙js">1419.数青蛙.js</a></br>
 <a href="#1两数之和js">1.两数之和.js</a></br>
-<a href="#144二叉树的前序遍历js">144.二叉树的前序遍历.js</a></br>
+<a href="#141环形链表js">141.环形链表.js</a></br>
+<a href="#1221分割平衡字符串js">1221.分割平衡字符串.js</a></br>
 <a href="#19删除链表的倒数第-n-个结点js">19.删除链表的倒数第-n-个结点.js</a></br>
-<a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a></br>
-<a href="#20有效的括号js">20.有效的括号.js</a></br>
 <a href="#1827最少操作使数组递增js">1827.最少操作使数组递增.js</a></br>
-<a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a></br>
+<a href="#145二叉树的后序遍历js">145.二叉树的后序遍历.js</a></br>
+<a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a></br>
+<a href="#104二叉树的最大深度js">104.二叉树的最大深度.js</a></br>
+<a href="#20有效的括号js">20.有效的括号.js</a></br>
 <a href="#237删除链表中的节点js">237.删除链表中的节点.js</a></br>
+<a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a></br>
+<a href="#344反转字符串js">344.反转字符串.js</a></br>
+<a href="#26删除有序数组中的重复项js">26.删除有序数组中的重复项.js</a></br>
 <a href="#242有效的字母异位词js">242.有效的字母异位词.js</a></br>
 <a href="#46全排列js">46.全排列.js</a></br>
+<a href="#70爬楼梯js">70.爬楼梯.js</a></br>
 <a href="#509斐波那契数js">509.斐波那契数.js</a></br>
 <a href="#71简化路径js">71.简化路径.js</a></br>
-<a href="#70爬楼梯js">70.爬楼梯.js</a></br>
-<a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a></br>
-<a href="#94二叉树的中序遍历js">94.二叉树的中序遍历.js</a></br>
-<a href="#constjs">const.js</a></br>
 <a href="#9回文数js">9.回文数.js</a></br>
 <a href="#debouncejs">debounce.js</a></br>
-<a href="#instanceofjs">instanceof.js</a></br>
+<a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a></br>
+<a href="#constjs">const.js</a></br>
 <a href="#deepClonejs">deepClone.js</a></br>
-<a href="#stackjs">stack.js</a></br>
-<a href="#throttlejs">throttle.js</a></br>
+<a href="#94二叉树的中序遍历js">94.二叉树的中序遍历.js</a></br>
+<a href="#instanceofjs">instanceof.js</a></br>
 <a href="#linkedListjs">linkedList.js</a></br>
-## 141.环形链表.js
+<a href="#throttlejs">throttle.js</a></br>
+<a href="#stackjs">stack.js</a></br>
+## 144.二叉树的前序遍历.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=141 lang=javascript
+ * @lc app=leetcode.cn id=144 lang=javascript
  *
- * [141] 环形链表
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-
-/**
- * @param {ListNode} head
- * @return {boolean}
- */
-var hasCycle = function(head) {
-    if(!head) return false
-    let slow = head
-    let fast = head
-    while(fast && fast.next){
-        slow = slow.next
-        fast = fast.next.next
-        if(fast === slow) return true
-    }
-    return false
-};
-// @lc code=end
-
-
-```
-
-
-## 104.二叉树的最大深度.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=104 lang=javascript
- *
- * [104] 二叉树的最大深度
- */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var maxDepth = function(root) {
-    if(!root) return 0
-    return Math.max(maxDepth(root.left),maxDepth(root.right)) +1
-};
-// @lc code=end
-
-
-```
-
-
-## 1221.分割平衡字符串.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=1221 lang=javascript
- *
- * [1221] 分割平衡字符串
- */
-
-// @lc code=start
-/**
- * @param {string} s
- * @return {number}
- */
-var balancedStringSplit = function(s) {
-    let res = 0 ,n = 0
-    for(let i = 0;i<s.length;i++){
-        s[i]==='R' ? n++ : n--
-        if(n===0) res++
-    }
-    return res
-};
-// @lc code=end
-
-
-```
-
-
-## 145.二叉树的后序遍历.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=145 lang=javascript
- *
- * [145] 二叉树的后序遍历
+ * [144] 二叉树的前序遍历
  */
 
 // @lc code=start
@@ -144,13 +50,13 @@ var balancedStringSplit = function(s) {
  * @param {TreeNode} root
  * @return {number[]}
  */
-var postorderTraversal = function(root) {
+var preorderTraversal = function(root) {
     let res = []
     function dfs(root){
         if(!root) return;
+        res.push(root.val)
         dfs(root.left)
         dfs(root.right)
-        res.push(root.val)
     }
     dfs(root)
     return res
@@ -214,36 +120,63 @@ var twoSum = function(nums, target) {
 ```
 
 
-## 144.二叉树的前序遍历.js
+## 141.环形链表.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=144 lang=javascript
+ * @lc app=leetcode.cn id=141 lang=javascript
  *
- * [144] 二叉树的前序遍历
+ * [141] 环形链表
  */
 
 // @lc code=start
 /**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
  * }
  */
+
 /**
- * @param {TreeNode} root
- * @return {number[]}
+ * @param {ListNode} head
+ * @return {boolean}
  */
-var preorderTraversal = function(root) {
-    let res = []
-    function dfs(root){
-        if(!root) return;
-        res.push(root.val)
-        dfs(root.left)
-        dfs(root.right)
+var hasCycle = function(head) {
+    if(!head) return false
+    let slow = head
+    let fast = head
+    while(fast && fast.next){
+        slow = slow.next
+        fast = fast.next.next
+        if(fast === slow) return true
     }
-    dfs(root)
+    return false
+};
+// @lc code=end
+
+
+```
+
+
+## 1221.分割平衡字符串.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1221 lang=javascript
+ *
+ * [1221] 分割平衡字符串
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var balancedStringSplit = function(s) {
+    let res = 0 ,n = 0
+    for(let i = 0;i<s.length;i++){
+        s[i]==='R' ? n++ : n--
+        if(n===0) res++
+    }
     return res
 };
 // @lc code=end
@@ -282,6 +215,74 @@ var removeNthFromEnd = function(head, n) {
 ```
 
 
+## 1827.最少操作使数组递增.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=1827 lang=javascript
+ *
+ * [1827] 最少操作使数组递增
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var minOperations = function(nums) {
+    let res = 0
+    for(let i = 0;i<nums.length;i++){
+        if(nums[i]>=nums[i+1]){
+            let n = nums[i] - nums[i+1] + 1
+            nums[i+1] = n + nums[i+1]
+            res += n
+        }
+    }
+    return res
+};
+// @lc code=end
+
+
+```
+
+
+## 145.二叉树的后序遍历.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=145 lang=javascript
+ *
+ * [145] 二叉树的后序遍历
+ */
+
+// @lc code=start
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var postorderTraversal = function(root) {
+    let res = []
+    function dfs(root){
+        if(!root) return;
+        dfs(root.left)
+        dfs(root.right)
+        res.push(root.val)
+    }
+    dfs(root)
+    return res
+};
+// @lc code=end
+
+
+```
+
+
 ## 1672.最富有客户的资产总量.js
 ``` javascript
 /*
@@ -302,6 +303,37 @@ var maximumWealth = function(accounts) {
         max = Math.max(cur.reduce((l,n)=>l+n),max)
     }
     return max
+};
+// @lc code=end
+
+
+```
+
+
+## 104.二叉树的最大深度.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=104 lang=javascript
+ *
+ * [104] 二叉树的最大深度
+ */
+
+// @lc code=start
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+    if(!root) return 0
+    return Math.max(maxDepth(root.left),maxDepth(root.right)) +1
 };
 // @lc code=end
 
@@ -346,29 +378,29 @@ var isValid = function(s) {
 ```
 
 
-## 1827.最少操作使数组递增.js
+## 237.删除链表中的节点.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=1827 lang=javascript
+ * @lc app=leetcode.cn id=237 lang=javascript
  *
- * [1827] 最少操作使数组递增
+ * [237] 删除链表中的节点
  */
 
 // @lc code=start
 /**
- * @param {number[]} nums
- * @return {number}
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
  */
-var minOperations = function(nums) {
-    let res = 0
-    for(let i = 0;i<nums.length;i++){
-        if(nums[i]>=nums[i+1]){
-            let n = nums[i] - nums[i+1] + 1
-            nums[i+1] = n + nums[i+1]
-            res += n
-        }
-    }
-    return res
+/**
+ * @param {ListNode} node
+ * @return {void} Do not return anything, modify node in-place instead.
+ */
+var deleteNode = function(node) {
+    node.val = node.next.val
+    node.next = node.next.next
 };
 // @lc code=end
 
@@ -405,29 +437,49 @@ var deleteMiddle = function(head) {
 ```
 
 
-## 237.删除链表中的节点.js
+## 344.反转字符串.js
 ``` javascript
 /*
- * @lc app=leetcode.cn id=237 lang=javascript
+ * @lc app=leetcode.cn id=344 lang=javascript
  *
- * [237] 删除链表中的节点
+ * [344] 反转字符串
  */
 
 // @lc code=start
 /**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
  */
+var reverseString = function(s) {
+    let left = 0;
+    let right = s.length-1
+    while(left<=right){
+        [s[left],s[right]] = [s[right],s[left]]
+        left++
+        right--
+    }
+    return s
+};
+// @lc code=end
+
+
+```
+
+
+## 26.删除有序数组中的重复项.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=26 lang=javascript
+ *
+ * [26] 删除有序数组中的重复项
+ */
+
+// @lc code=start
 /**
- * @param {ListNode} node
- * @return {void} Do not return anything, modify node in-place instead.
+ * @param {number[]} nums
+ * @return {number}
  */
-var deleteNode = function(node) {
-    node.val = node.next.val
-    node.next = node.next.next
+var removeDuplicates = function(nums) {
 };
 // @lc code=end
 
@@ -473,6 +525,32 @@ var isAnagram = function(s, t) {
  */
 var permute = function(nums) {
 
+};
+// @lc code=end
+
+
+```
+
+
+## 70.爬楼梯.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=70 lang=javascript
+ *
+ * [70] 爬楼梯
+ */
+
+// @lc code=start
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairs = function(n) {
+    let res = [1,1]
+    for(let i = 2;i<=n;i++){
+        res[i] = res[i-1] + res[i-2]
+    }
+    return res[n]
 };
 // @lc code=end
 
@@ -540,139 +618,6 @@ var simplifyPath = function(path) {
 ```
 
 
-## 70.爬楼梯.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=70 lang=javascript
- *
- * [70] 爬楼梯
- */
-
-// @lc code=start
-/**
- * @param {number} n
- * @return {number}
- */
-var climbStairs = function(n) {
-    let res = [1,1]
-    for(let i = 2;i<=n;i++){
-        res[i] = res[i-1] + res[i-2]
-    }
-    return res[n]
-};
-// @lc code=end
-
-
-```
-
-
-## 83.删除排序链表中的重复元素.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=83 lang=javascript
- *
- * [83] 删除排序链表中的重复元素
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var deleteDuplicates = function(head) {
-    let h = head
-    while(h && h.next){
-        if(h.val === h.next.val){
-            h.next = h.next.next
-        }else{
-            h = h.next
-        }
-    }
-    return head
-};
-// @lc code=end
-
-
-```
-
-
-## 94.二叉树的中序遍历.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=94 lang=javascript
- *
- * [94] 二叉树的中序遍历
- */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {number[]}
- */
-var inorderTraversal = function(root) {
-    let res = []
-    function dfs(root){
-        if(!root) return;
-        dfs(root.left)
-        res.push(root.val)
-        dfs(root.right)
-    }
-    dfs(root)
-    return res
-};
-// @lc code=end
-
-
-```
-
-
-## const.js
-``` javascript
-var __const = function __const(data, value) {
-    window.data = value // 把要定义的data挂载到window下，并赋值value
-    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
-        enumerable: false,
-        configurable: false,
-        get: function () {
-            return value
-        },
-        set: function (data) {
-            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
-                throw new TypeError('Assignment to constant variable.')
-            } else {
-                return value
-            }
-        }
-    })
-}
-__const('a', 10)
-console.log(a)
-delete a
-console.log(a)
-for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
-    if (item === 'a') { // 因为不可枚举，所以不执行
-        console.log(window[item])
-    }
-}
-a = 20 // 报错
-```
-
-
 ## 9.回文数.js
 ``` javascript
 /*
@@ -720,21 +665,72 @@ const debounce = (fn, wait) => {
 ```
 
 
-## instanceof.js
+## 83.删除排序链表中的重复元素.js
 ``` javascript
-function ins(a,b){
-    //指针
- let i = a
- while(i){
-   if(i===b.prototype) return true
-   i=i.__proto__
- }
- return false 
-}
+/*
+ * @lc app=leetcode.cn id=83 lang=javascript
+ *
+ * [83] 删除排序链表中的重复元素
+ */
 
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteDuplicates = function(head) {
+    let h = head
+    while(h && h.next){
+        if(h.val === h.next.val){
+            h.next = h.next.next
+        }else{
+            h = h.next
+        }
+    }
+    return head
+};
+// @lc code=end
+
+
+```
+
+
+## const.js
+``` javascript
+var __const = function __const(data, value) {
+    window.data = value // 把要定义的data挂载到window下，并赋值value
+    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
+        enumerable: false,
+        configurable: false,
+        get: function () {
+            return value
+        },
+        set: function (data) {
+            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
+                throw new TypeError('Assignment to constant variable.')
+            } else {
+                return value
+            }
+        }
+    })
+}
+__const('a', 10)
+console.log(a)
+delete a
+console.log(a)
+for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
+    if (item === 'a') { // 因为不可枚举，所以不执行
+        console.log(window[item])
+    }
+}
+a = 20 // 报错
 ```
 
 
@@ -800,40 +796,59 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 ```
 
 
-## stack.js
+## 94.二叉树的中序遍历.js
 ``` javascript
-// const stack = [];
-// stack.push(1);
-// stack.push(2);
-// const item1 = stack.pop();
-// const item2 = stack.pop();
+/*
+ * @lc app=leetcode.cn id=94 lang=javascript
+ *
+ * [94] 二叉树的中序遍历
+ */
 
-// 调用堆栈
-function f1(){
-    f2()
-}
-function f2(){
-    f3()
-}
-function f3(){}
+// @lc code=start
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var inorderTraversal = function(root) {
+    let res = []
+    function dfs(root){
+        if(!root) return;
+        dfs(root.left)
+        res.push(root.val)
+        dfs(root.right)
+    }
+    dfs(root)
+    return res
+};
+// @lc code=end
 
-f1()
+
 ```
 
 
-## throttle.js
+## instanceof.js
 ``` javascript
-// 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
-        }
-    }
+function ins(a,b){
+    //指针
+ let i = a
+ while(i){
+   if(i===b.prototype) return true
+   i=i.__proto__
+ }
+ return false 
 }
+
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
 ```
 
 
@@ -871,5 +886,42 @@ function dg2(obj){
 }
 dg2(a)
 console.log(arr)
+```
+
+
+## throttle.js
+``` javascript
+// 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
+        }
+    }
+}
+```
+
+
+## stack.js
+``` javascript
+// const stack = [];
+// stack.push(1);
+// stack.push(2);
+// const item1 = stack.pop();
+// const item2 = stack.pop();
+
+// 调用堆栈
+function f1(){
+    f2()
+}
+function f2(){
+    f3()
+}
+function f3(){}
+
+f1()
 ```
 
