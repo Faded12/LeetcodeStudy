@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=19 lang=javascript
+ * @lc app=leetcode.cn id=876 lang=javascript
  *
- * [19] 删除链表的倒数第 N 个结点
+ * [876] 链表的中间结点
  */
 
 // @lc code=start
@@ -14,23 +14,15 @@
  */
 /**
  * @param {ListNode} head
- * @param {number} n
  * @return {ListNode}
  */
-var removeNthFromEnd = function(head, n) {
-    let dummy = {
-        next:head
-    }
-    let fast = slow = dummy
-    while(n--){
-        fast = fast.next
-    }
+var middleNode = function(head) {
+    let slow = fast = head
     while(fast && fast.next){
-        fast = fast.next
         slow = slow.next
+        fast = fast.next.next
     }
-    slow.next = slow.next.next
-    return dummy.next
+    return slow
 };
 // @lc code=end
 
