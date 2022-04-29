@@ -6,8 +6,8 @@ const generateInstall = (dirPath = '.') => {
     const files = glob.sync(`${dirPath}/*.js`);
     var mdData = ''
     var hrefList = `
-| 🌟 Title 🌟 |
-| -- |`
+| 🌟 Title 🌟 | 🌟 Title 🌟 |
+| -- | -- |`
     const listRes = files.map(async (item) => {
         if (item.indexOf('genMd') > -1) return
         const name = item.split('/')[1]
