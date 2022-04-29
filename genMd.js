@@ -8,12 +8,15 @@ const generateInstall = (dirPath = '.') => {
     var hrefList = `
 | 🌟 Title 🌟 | 🌟 Title 🌟 |
 | -- | -- |`
-    const listRes = files.map(async (item) => {
+    const listRes = files.map(async (item,index) => {
         if (item.indexOf('genMd') > -1) return
         const name = item.split('/')[1]
         let data = await read(item)
+        if(!index % 2){
+            hrefList+=`| `
+        }
         hrefList += `
-| ☑️    <a href="#${name.split('.').join('')}">${name}</a> |`
+☑️    <a href="#${name.split('.').join('')}">${name}</a> |`
         mdData += `
 ## ${name}
 \`\`\` javascript
