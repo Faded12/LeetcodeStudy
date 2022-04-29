@@ -13,7 +13,7 @@ const generateInstall = (dirPath = '.') => {
         const name = item.split('/')[1]
         let data = await read(item)
         hrefList += `
-| ☑️ <a href="#${name.split('.').join('')}">${name}</a> |`
+| ☑️    <a href="#${name.split('.').join('')}">${name}</a> |`
         mdData += `
 ## ${name}
 \`\`\` javascript
