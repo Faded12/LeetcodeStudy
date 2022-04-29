@@ -26,9 +26,9 @@ const generateInstall = (dirPath = '.') => {
 \`\`\` javascript
 ${data}
 \`\`\`
-
+<a href="#开始">回到目录</a>
 `
-        mdData += `<a href="#开始">回到顶部</a>`
+        mdData += ``
     })
 
     Promise.all(listRes).then(() => {

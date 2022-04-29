@@ -7,13 +7,13 @@
 |  ☑️    <a href="#1419数青蛙js">1419.数青蛙.js</a> | ☑️    <a href="#144二叉树的前序遍历js">144.二叉树的前序遍历.js</a> |
 |  ☑️    <a href="#145二叉树的后序遍历js">145.二叉树的后序遍历.js</a> | ☑️    <a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a> |
 |  ☑️    <a href="#1827最少操作使数组递增js">1827.最少操作使数组递增.js</a> | ☑️    <a href="#19删除链表的倒数第-n-个结点js">19.删除链表的倒数第-n-个结点.js</a> |
-|  ☑️    <a href="#20有效的括号js">20.有效的括号.js</a> | ☑️    <a href="#206反转链表js">206.反转链表.js</a> |
-|  ☑️    <a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a> | ☑️    <a href="#21合并两个有序链表js">21.合并两个有序链表.js</a> |
-|  ☑️    <a href="#237删除链表中的节点js">237.删除链表中的节点.js</a> | ☑️    <a href="#26删除有序数组中的重复项js">26.删除有序数组中的重复项.js</a> |
-|  ☑️    <a href="#242有效的字母异位词js">242.有效的字母异位词.js</a> | ☑️    <a href="#344反转字符串js">344.反转字符串.js</a> |
+|  ☑️    <a href="#20有效的括号js">20.有效的括号.js</a> | ☑️    <a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a> |
+|  ☑️    <a href="#206反转链表js">206.反转链表.js</a> | ☑️    <a href="#21合并两个有序链表js">21.合并两个有序链表.js</a> |
+|  ☑️    <a href="#237删除链表中的节点js">237.删除链表中的节点.js</a> | ☑️    <a href="#242有效的字母异位词js">242.有效的字母异位词.js</a> |
+|  ☑️    <a href="#26删除有序数组中的重复项js">26.删除有序数组中的重复项.js</a> | ☑️    <a href="#344反转字符串js">344.反转字符串.js</a> |
 |  ☑️    <a href="#46全排列js">46.全排列.js</a> | ☑️    <a href="#509斐波那契数js">509.斐波那契数.js</a> |
-|  ☑️    <a href="#70爬楼梯js">70.爬楼梯.js</a> | ☑️    <a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a> |
-|  ☑️    <a href="#71简化路径js">71.简化路径.js</a> | ☑️    <a href="#876链表的中间结点js">876.链表的中间结点.js</a> |
+|  ☑️    <a href="#70爬楼梯js">70.爬楼梯.js</a> | ☑️    <a href="#71简化路径js">71.简化路径.js</a> |
+|  ☑️    <a href="#876链表的中间结点js">876.链表的中间结点.js</a> | ☑️    <a href="#83删除排序链表中的重复元素js">83.删除排序链表中的重复元素.js</a> |
 |  ☑️    <a href="#9回文数js">9.回文数.js</a> | ☑️    <a href="#94二叉树的中序遍历js">94.二叉树的中序遍历.js</a> |
 |  ☑️    <a href="#constjs">const.js</a> | ☑️    <a href="#debouncejs">debounce.js</a> |
 |  ☑️    <a href="#deepClonejs">deepClone.js</a> | ☑️    <a href="#instanceofjs">instanceof.js</a> |
@@ -49,8 +49,8 @@ var twoSum = function(nums, target) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 104.二叉树的最大深度.js
 ``` javascript
@@ -81,8 +81,8 @@ var maxDepth = function(root) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 1221.分割平衡字符串.js
 ``` javascript
@@ -109,8 +109,8 @@ var balancedStringSplit = function(s) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 141.环形链表.js
 ``` javascript
@@ -148,8 +148,8 @@ var hasCycle = function(head) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 1419.数青蛙.js
 ``` javascript
@@ -171,8 +171,8 @@ var minNumberOfFrogs = function(croakOfFrogs) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 144.二叉树的前序遍历.js
 ``` javascript
@@ -210,8 +210,8 @@ var preorderTraversal = function(root) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 145.二叉树的后序遍历.js
 ``` javascript
@@ -249,8 +249,8 @@ var postorderTraversal = function(root) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 1672.最富有客户的资产总量.js
 ``` javascript
@@ -277,8 +277,8 @@ var maximumWealth = function(accounts) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 1827.最少操作使数组递增.js
 ``` javascript
@@ -308,8 +308,8 @@ var minOperations = function(nums) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 19.删除链表的倒数第-n-个结点.js
 ``` javascript
@@ -351,8 +351,8 @@ var removeNthFromEnd = function(head, n) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 20.有效的括号.js
 ``` javascript
@@ -389,8 +389,38 @@ var isValid = function(s) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
+        
+## 2095.删除链表的中间节点.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=2095 lang=javascript
+ *
+ * [2095] 删除链表的中间节点
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteMiddle = function(head) {
+
+};
+// @lc code=end
+
+
+```
+<a href="#开始">回到目录</a>
+
         
 ## 206.反转链表.js
 ``` javascript
@@ -428,38 +458,8 @@ var reverseList = function(head) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
-        
-## 2095.删除链表的中间节点.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=2095 lang=javascript
- *
- * [2095] 删除链表的中间节点
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var deleteMiddle = function(head) {
-
-};
-// @lc code=end
-
-
-```
-
-<a href="#开始">回到顶部</a>
         
 ## 21.合并两个有序链表.js
 ``` javascript
@@ -504,8 +504,8 @@ var mergeTwoLists = function(list1, list2) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 237.删除链表中的节点.js
 ``` javascript
@@ -535,30 +535,8 @@ var deleteNode = function(node) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
-        
-## 26.删除有序数组中的重复项.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=26 lang=javascript
- *
- * [26] 删除有序数组中的重复项
- */
-
-// @lc code=start
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var removeDuplicates = function(nums) {
-};
-// @lc code=end
-
-
-```
-
-<a href="#开始">回到顶部</a>
         
 ## 242.有效的字母异位词.js
 ``` javascript
@@ -581,8 +559,30 @@ var isAnagram = function(s, t) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
+        
+## 26.删除有序数组中的重复项.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=26 lang=javascript
+ *
+ * [26] 删除有序数组中的重复项
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+};
+// @lc code=end
+
+
+```
+<a href="#开始">回到目录</a>
+
         
 ## 344.反转字符串.js
 ``` javascript
@@ -611,8 +611,8 @@ var reverseString = function(s) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 46.全排列.js
 ``` javascript
@@ -634,8 +634,8 @@ var permute = function(nums) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 509.斐波那契数.js
 ``` javascript
@@ -663,8 +663,8 @@ var fib = function(n) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 70.爬楼梯.js
 ``` javascript
@@ -690,8 +690,76 @@ var climbStairs = function(n) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
+        
+## 71.简化路径.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=71 lang=javascript
+ *
+ * [71] 简化路径
+ */
+
+// @lc code=start
+/**
+ * @param {string} path
+ * @return {string}
+ */
+var simplifyPath = function(path) {
+    let stack =[]
+    let paths = path.split('/')
+    for(let i=0;i<paths.length;i++){
+        const p =paths[i]
+        if(p=='..'){
+            stack.pop()
+        }else if(p && p!=='.'){
+            stack.push(p)
+        }
+    }
+    return '/'+stack.join('/')
+};
+// @lc code=end
+
+
+```
+<a href="#开始">回到目录</a>
+
+        
+## 876.链表的中间结点.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=876 lang=javascript
+ *
+ * [876] 链表的中间结点
+ */
+
+// @lc code=start
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var middleNode = function(head) {
+    let slow = fast = head
+    while(fast && fast.next){
+        slow = slow.next
+        fast = fast.next.next
+    }
+    return slow
+};
+// @lc code=end
+
+
+```
+<a href="#开始">回到目录</a>
+
         
 ## 83.删除排序链表中的重复元素.js
 ``` javascript
@@ -728,76 +796,8 @@ var deleteDuplicates = function(head) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
-        
-## 71.简化路径.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=71 lang=javascript
- *
- * [71] 简化路径
- */
-
-// @lc code=start
-/**
- * @param {string} path
- * @return {string}
- */
-var simplifyPath = function(path) {
-    let stack =[]
-    let paths = path.split('/')
-    for(let i=0;i<paths.length;i++){
-        const p =paths[i]
-        if(p=='..'){
-            stack.pop()
-        }else if(p && p!=='.'){
-            stack.push(p)
-        }
-    }
-    return '/'+stack.join('/')
-};
-// @lc code=end
-
-
-```
-
-<a href="#开始">回到顶部</a>
-        
-## 876.链表的中间结点.js
-``` javascript
-/*
- * @lc app=leetcode.cn id=876 lang=javascript
- *
- * [876] 链表的中间结点
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var middleNode = function(head) {
-    let slow = fast = head
-    while(fast && fast.next){
-        slow = slow.next
-        fast = fast.next.next
-    }
-    return slow
-};
-// @lc code=end
-
-
-```
-
-<a href="#开始">回到顶部</a>
         
 ## 9.回文数.js
 ``` javascript
@@ -819,8 +819,8 @@ var isPalindrome = function(x) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## 94.二叉树的中序遍历.js
 ``` javascript
@@ -858,8 +858,8 @@ var inorderTraversal = function(root) {
 
 
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## const.js
 ``` javascript
@@ -891,8 +891,8 @@ for (let item in window) { // 因为const定义的属性在global下也是不存
 }
 a = 20 // 报错
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## debounce.js
 ``` javascript
@@ -917,8 +917,8 @@ const debounce = (fn, wait) => {
     }
 }
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## deepClone.js
 ``` javascript
@@ -980,8 +980,8 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 // 会抛弃对象的constructor,所有的构造函数会指向Object
 // 对象有循环引用,会报错
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## instanceof.js
 ``` javascript
@@ -999,8 +999,8 @@ console.log(ins([1],Array))
 console.log(ins([1],Object))
 console.log(ins(122,String))
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## linkedList.js
 ``` javascript
@@ -1037,8 +1037,8 @@ function dg2(obj){
 dg2(a)
 console.log(arr)
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## stack.js
 ``` javascript
@@ -1059,8 +1059,8 @@ function f3(){}
 
 f1()
 ```
+<a href="#开始">回到目录</a>
 
-<a href="#开始">回到顶部</a>
         
 ## throttle.js
 ``` javascript
@@ -1076,5 +1076,4 @@ const throttle = (fn,wait)=>{
     }
 }
 ```
-
-<a href="#开始">回到顶部</a>
+<a href="#开始">回到目录</a>
