@@ -5,6 +5,7 @@ const path = require('path');
 const generateInstall = (dirPath = '.') => {
     const files = glob.sync(`${dirPath}/*.js`);
     var mdData = ''
+    var flag = true
     var hrefList = `
 | 🌟 Title 🌟 | 🌟 Title 🌟 |
 | -- | -- |`
@@ -12,12 +13,14 @@ const generateInstall = (dirPath = '.') => {
         if (item.indexOf('genMd') > -1) return
         const name = item.split('/')[1]
         let data = await read(item)
-        if(!index % 2){
-            hrefList+=`| `
+        if(flag){
+            hrefList += `
+| `
         }
-        hrefList += `
-☑️    <a href="#${name.split('.').join('')}">${name}</a> |`
+        hrefList += ` ☑️    <a href="#${name.split('.').join('')}">${name}</a> |`
+        flag = !flag
         mdData += `
+        
 ## ${name}
 \`\`\` javascript
 ${data}
