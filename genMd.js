@@ -7,6 +7,7 @@ const generateInstall = (dirPath = '.') => {
     var mdData = ''
     var flag = true
     var hrefList = `
+## 开始
 | 🌟 Title 🌟 | 🌟 Title 🌟 |
 | -- | -- |`
     const listRes = files.map(async (item,index) => {
@@ -27,6 +28,7 @@ ${data}
 \`\`\`
 
 `
+        mdData += `<a href="#开始">回到顶部</a>`
     })
 
     Promise.all(listRes).then(() => {
