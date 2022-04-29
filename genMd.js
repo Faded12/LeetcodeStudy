@@ -5,13 +5,15 @@ const path = require('path');
 const generateInstall = (dirPath = '.') => {
     const files = glob.sync(`${dirPath}/*.js`);
     var mdData = ''
-    var hrefList = ''
+    var hrefList = `
+| 🌟 Title 🌟 |
+| -- |`
     const listRes = files.map(async (item) => {
         if (item.indexOf('genMd') > -1) return
         const name = item.split('/')[1]
         let data = await read(item)
         hrefList += `
-<a href="#${name.split('.').join('')}">${name}</a></br>`
+| ☑️ <a href="#${name.split('.').join('')}">${name}</a> |`
         mdData += `
 ## ${name}
 \`\`\` javascript
