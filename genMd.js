@@ -9,7 +9,7 @@
         let flag = true
         let hrefList = `
 ## 开始
-##### 文档由 <a href="https://github.com/Faded12/LeetcodeStudy/blob/main/genMd.js">./genMd.js</a> 生成
+##### 文档由 <a href="./genMd.js">./genMd.js</a> 生成
 | 🌟 Title 🌟 | 🌟 Title 🌟 |
 | -- | -- |`
         const listRes = files.map(async (item, index) => {
