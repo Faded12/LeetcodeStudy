@@ -6,17 +6,21 @@
     const generateInstall = (dirPath = '.') => {
         const files = glob.sync(`${dirPath}/*.js`);
         let mdData = ''
+        let lcNum = 0
+        let fnNum = 0
         let flag = true
-        let hrefList = `
+        let headInfo = `
 ## 开始
-##### 文档由 <a href="./genMd.js">./genMd.js</a> 生成
+##### 文档由 <a href="./genMd.js">./genMd.js</a> 生成`
+        let hrefList = `
 | 🌟 Title 🌟 | 🌟 Title 🌟 |
 | -- | -- |`
         const listRes = files.map(async (item, index) => {
             if (item.indexOf('genMd') > -1) return
             const name = item.split('/')[1]
             let data = await read(item)
-            let hook = data.substring(data.lastIndexOf('{')+1,data.lastIndexOf('}')).length>10 ? '🔘':'⚪️'
+            let hook = data.substring(data.lastIndexOf('{')+1,data.lastIndexOf('}')).length>10 ? '🔘':'⚪️';
+            (/[\u4e00-\u9fa5]/).test(item)?lcNum++:fnNum++
             if (flag) {
                 hrefList += `
 | `
@@ -35,7 +39,10 @@ ${data}
         })
 
         Promise.all(listRes).then(() => {
-            let data = hrefList + mdData
+            headInfo += `
+leetcode：${lcNum}
+函数实现：${fnNum}`
+            let data = headInfo + hrefList + mdData
             fs.writeFile(path.join(__dirname, `./README.md`), data, 'utf8', (err) => {
                 if (err) throw err;
             });
