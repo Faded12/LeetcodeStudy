@@ -16,11 +16,12 @@
             if (item.indexOf('genMd') > -1) return
             const name = item.split('/')[1]
             let data = await read(item)
+            let hook = data.substring(data.lastIndexOf('{')+1,data.lastIndexOf('}')).length>10 ? '🔘':'⚪️'
             if (flag) {
                 hrefList += `
 | `
             }
-            hrefList += ` ☑️    <a href="#${name.split('.').join('')}">${name}</a> |`
+            hrefList += ` ${hook}    <a href="#${name.split('.').join('')}">${name}</a> |`
             flag = !flag
             mdData += `
         
