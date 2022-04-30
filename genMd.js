@@ -40,7 +40,7 @@ ${data}
 
         Promise.all(listRes).then(() => {
             headInfo += `
-<p>leetcode：${lcNum}</p>
+leetcode：${lcNum}
 函数实现：${fnNum}`
             let data = headInfo + hrefList + mdData
             fs.writeFile(path.join(__dirname, `./README.md`), data, 'utf8', (err) => {
