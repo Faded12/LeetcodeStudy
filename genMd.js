@@ -4,8 +4,7 @@
     const path = require('path');
 
     const generateInstall = (dirPath = '.') => {
-        const files = [...glob.sync(`${dirPath}/leetcode/*.js`),...glob.sync(`${dirPath}/function/*.js`)];
-        console.log(files)
+        const files = [...glob.sync(`${dirPath}/leetcode/*.js`), ...glob.sync(`${dirPath}/function/*.js`)];
         let mdData = ''
         let lcNum = 0
         let fnNum = 0
@@ -17,11 +16,10 @@
 | 🌟 Title 🌟 | 🌟 Title 🌟 |
 | -- | -- |`
         const listRes = files.map(async (item, index) => {
-            if (item.indexOf('genMd') > -1) return
             const name = item.split('/')[2]
             let data = await read(item)
-            let hook = data.substring(data.lastIndexOf('{')+1,data.lastIndexOf('}')).length>10 ? '🔘':'⚪️';
-            (/[\u4e00-\u9fa5]/).test(item)?lcNum++:fnNum++
+            let hook = data.substring(data.lastIndexOf('{') + 1, data.lastIndexOf('}')).length > 10 ? '🔘' : '⚪️';
+            (/[\u4e00-\u9fa5]/).test(item) ? lcNum++ : fnNum++
             if (flag) {
                 hrefList += `
 | `
