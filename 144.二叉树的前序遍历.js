@@ -17,6 +17,8 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
+
+// 递归
 var preorderTraversal = function(root) {
     let res = []
     function dfs(root){
@@ -26,6 +28,21 @@ var preorderTraversal = function(root) {
         dfs(root.right)
     }
     dfs(root)
+    return res
+};
+
+
+// 迭代
+var preorderTraversal = function(root) {
+    if(!root) return [];
+    let res = [];
+    let stack = [root];
+    while(stack.length){
+        let cur = stack.pop();
+        res.push(cur.val);
+        cur.right && stack.push(cur.right);
+        cur.left && stack.push(cur.left)
+    }
     return res
 };
 // @lc code=end
