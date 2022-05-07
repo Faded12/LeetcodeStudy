@@ -17,7 +17,17 @@
  * @return {ListNode}
  */
 var deleteMiddle = function(head) {
-
+    let dummy = {
+        next:head
+    }
+    let slow = dummy;
+    let fast = dummy;
+    while(fast){
+        fast = fast.next.next;
+        slow = slow.next
+    }
+    slow.next = slow.next.next
+    return head
 };
 // @lc code=end
 
