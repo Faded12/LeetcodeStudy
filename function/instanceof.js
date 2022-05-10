@@ -1,3 +1,4 @@
+//instanceof实现
 function ins(left,right){
   left = left.__proto__
   right = right.prototype

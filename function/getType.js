@@ -1,3 +1,4 @@
+//getType 获取对象类型
 function getType(obj) {
     let type = typeof obj;
     if (type !== "object") { // 先进行typeof判断，如果是 基础数据类型，直接返回
