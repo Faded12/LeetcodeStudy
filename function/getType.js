@@ -15,3 +15,4 @@ getType(undefined) // "undefined" typeof 直接返回
 getType() // "undefined" typeof 直接返回
 getType(function () {}) // "function" typeof能判断，因此首字母小写
 getType(/123/g) //"RegExp" toString返回
+//
