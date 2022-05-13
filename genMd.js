@@ -11,7 +11,9 @@
         let flag = true
         let headInfo = `
 ## 开始
-##### 此文档涵盖项目内所有代码实现，由 <a href="./genMd.js">./genMd.js</a> 自动生成 🥳🌪`
+##### 此文档涵盖项目内所有代码实现，由 <a href="./genMd.js">./genMd.js</a> 自动生成 🌪
+
+`
         let hrefList = `
 | 🌟 Title 🌟 | 🌟 Title 🌟 |
 | -- | -- |`
@@ -33,15 +35,13 @@
 ${data}
 \`\`\`
 <a href="#开始">回到目录</a>
-
-
 `
             mdData += ``
         })
 
         Promise.all(listRes).then(() => {
             headInfo += `
-##### 🤯 leetcode：${lcNum}
+##### 🤯 LeetCode：${lcNum}
 ##### 🧐 JS方法实现：${fnNum}`
             let data = headInfo + hrefList + mdData
             fs.writeFile(path.join(__dirname, `./README.md`), data, 'utf8', (err) => {
