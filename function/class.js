@@ -12,7 +12,7 @@ const Foo = {
 }
 
 @mixins(Foo)
-class MyClass{}
+class MyClass{/************/}
 
 let obj = new MyClass()
 obj.foo()

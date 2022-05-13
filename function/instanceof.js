@@ -13,6 +13,6 @@ console.log(ins([1],Array))
 console.log(ins([1],Object))
 console.log(ins(122,String))
 console.log(ins({},Function))
-console.log(ins(function(){},Function))
+console.log(ins(function(){/************/},Function))
 console.log(ins([],Function))
 //
