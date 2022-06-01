@@ -3,17 +3,15 @@ function updateView() {
     console.log('视图更新')
 }
 
-// 重新定义数组原型
-const oldArrayProperty = Array.prototype
-// 创建新对象，原型指向 oldArrayProperty ，再扩展新的方法不会影响原型
-const arrProto = Object.create(oldArrayProperty);
-['push', 'pop', 'shift', 'unshift', 'splice'].forEach(methodName => {
-    arrProto[methodName] = function () {
-        updateView() // 触发视图更新
-        oldArrayProperty[methodName].call(this, ...arguments)
-        // Array.prototype.push.call(this, ...arguments)
+const oldArrayFun = Array.prototype;
+const newArrayFun = Object.create(oldArrayFun);
+['pop','push','shift','unshift','splice'].forEach(item=>{
+    newArrayFun[item] = function(){
+        updateView();
+        oldArrayFun[item].call(this,...arguments)
     }
 })
+
 
 // 重新定义属性，监听起来
 function defineReactive(target, key, value) {
@@ -40,17 +38,17 @@ function defineReactive(target, key, value) {
 }
 
 // 监听对象属性
-function observer(target) {
-    if (typeof target !== 'object' || target === null) {
-        // 不是对象或数组
+function observer(target){
+    if(typeof target !=='object' || target == null){
         return target
     }
-    if (Array.isArray(target)) {
-        target.__proto__ = arrProto
+
+    if(target instanceof Array){
+        target.__proto__ = newArrayFun
     }
-    // 重新定义各个属性（for in 也可以遍历数组）
-    for (let key in target) {
-        defineReactive(target, key, target[key])
+
+    for(let item in target){
+        defineReactive(target,item,target[item])
     }
 }
 
