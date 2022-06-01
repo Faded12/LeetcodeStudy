@@ -31,20 +31,24 @@ function deepClone(obj) {
             copy[key] = deepClone(obj[key])
         }
     }
-    return obj
+    return copy
 }
 
-function deepClone(obj) {
-    if(typeof obj !== 'object' || obj === null) return obj;
-    let copy = obj.constructor === Array ? [] : {};
+/**
+ * 深拷贝
+ * @param {obect} obj 要拷贝的对象
+ * @returns 拷贝后
+ */
+function deepClone(obj){
+    if(typeof(obj)!=='object' || obj==null) return obj;
+    let copy = obj instanceof Array ? [] : {}
     for(let key in obj){
         if(obj.hasOwnProperty(key)){
             copy[key] = deepClone(obj[key])
         }
     }
-    return obj
+    return copy
 }
-
 
 // 简洁版本
 // 简单版：
