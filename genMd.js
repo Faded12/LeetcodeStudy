@@ -6,7 +6,9 @@
     const generateInstall = (dirPath = '.') => {
         const leetcodeList = glob.sync(`${dirPath}/leetcode/*.js`)
         leetcodeList.sort((a,b)=>a.split('/')[2].split('.')[0]-b.split('/')[2].split('.')[0])
-        const files = [...leetcodeList, ...glob.sync(`${dirPath}/function/*.js`)];
+        const functionList = glob.sync(`${dirPath}/function/*.js`)
+        functionList.sort((a,b)=>Math.random()> 0.5 ? -1 :1)
+        const files = [...leetcodeList, ...functionList];
         let mdData = ''
         let lcNum = 0
         let fnNum = 0

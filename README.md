@@ -34,14 +34,14 @@
 |  ⚪️    <a href="#1419数青蛙js">1419.数青蛙.js</a> | 🔘    <a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a> |
 |  🔘    <a href="#1827最少操作使数组递增js">1827.最少操作使数组递增.js</a> | 🔘    <a href="#2073买票需要的时间js">2073.买票需要的时间.js</a> |
 |  🔘    <a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a> | 🔘    <a href="#2259移除指定数字得到的最大结果js">2259.移除指定数字得到的最大结果.js</a> |
-|  🔘    <a href="#ajaxjs">ajax.js</a> | 🔘    <a href="#bubbleSortjs">bubbleSort.js</a> |
-|  🔘    <a href="#classjs">class.js</a> | 🔘    <a href="#constjs">const.js</a> |
-|  🔘    <a href="#debouncejs">debounce.js</a> | 🔘    <a href="#deepClonejs">deepClone.js</a> |
-|  🔘    <a href="#getTypejs">getType.js</a> | 🔘    <a href="#instanceofjs">instanceof.js</a> |
-|  🔘    <a href="#linkedListjs">linkedList.js</a> | 🔘    <a href="#nodeTaskjs">nodeTask.js</a> |
-|  🔘    <a href="#observejs">observe.js</a> | 🔘    <a href="#quickSortjs">quickSort.js</a> |
-|  🔘    <a href="#stackjs">stack.js</a> | 🔘    <a href="#throttlejs">throttle.js</a> |
-|  🔘    <a href="#递归反转数组js">递归反转数组.js</a> |
+|  🔘    <a href="#ajaxjs">ajax.js</a> | 🔘    <a href="#constjs">const.js</a> |
+|  🔘    <a href="#debouncejs">debounce.js</a> | 🔘    <a href="#getTypejs">getType.js</a> |
+|  🔘    <a href="#递归反转数组js">递归反转数组.js</a> | 🔘    <a href="#throttlejs">throttle.js</a> |
+|  🔘    <a href="#nodeTaskjs">nodeTask.js</a> | 🔘    <a href="#classjs">class.js</a> |
+|  🔘    <a href="#bubbleSortjs">bubbleSort.js</a> | 🔘    <a href="#quickSortjs">quickSort.js</a> |
+|  🔘    <a href="#instanceofjs">instanceof.js</a> | 🔘    <a href="#deepClonejs">deepClone.js</a> |
+|  🔘    <a href="#stackjs">stack.js</a> | 🔘    <a href="#observejs">observe.js</a> |
+|  🔘    <a href="#linkedListjs">linkedList.js</a> |
             
 ## 1.两数之和.js
 ``` javascript
@@ -1894,77 +1894,6 @@ xhr.onreadysatechange = function(){
 <a href="#开始">回到目录</a>
 
             
-## bubbleSort.js
-``` javascript
-//冒泡排序
-function bubbleSort(arr){
-    let temp;
-    for(let i = 0;i<arr.length-1;i++){
-        for(let j = 0;j<arr.length-1-i;j++){
-            if(arr[j]>arr[j+1]){
-                temp = arr[j+1]
-                arr[j+1] = arr[j]
-                arr[j] = temp
-            }
-        }
-    }
-    return arr
-}
-
-console.log(bubbleSort([21,213,32,1212,312,432312,324,13667,345]))
-console.log(bubbleSort([998,484,5686,4562,120,2122,0,12,6]))
-/**********/
-```
-<a href="#开始">回到目录</a>
-
-            
-## class.js
-``` javascript
-//class
-function mixins(...list){
-    return function(target){
-        Object.assign(target.prototype,...list)
-    }
-}
-
-const Foo = {
-    foo(){
-        console.log('foo...')
-    }
-}
-
-// @mixins(Foo)
-// class MyClass{/************/}
-
-// let obj = new MyClass()
-// obj.foo()
-//
-
-class People{
-    constructor(name){
-        this.name = name
-    }
-    say(){
-        console.log(`${this.name}明`)
-    }
-}
-
-const x = new People('小')
-
-class Student extends People{
-    constructor(name,num){
-        super(name)
-        this.num = num;
-    }
-}
-
-const b = new Student(222)
-
-console.log(b.name)
-```
-<a href="#开始">回到目录</a>
-
-            
 ## const.js
 ``` javascript
 var __const = function __const(data, value) {
@@ -2024,73 +1953,6 @@ const debounce = (fn, wait) => {
 <a href="#开始">回到目录</a>
 
             
-## deepClone.js
-``` javascript
-function deepClone(obj) {
-    // 如果是 值类型 或 null，则直接return
-    if (typeof obj !== 'object' || obj === null) {
-        return obj
-    }
-    // 定义结果对象
-    let copy = {}
-    // 如果对象是数组，则定义结果数组
-    if (obj.constructor === Array) {
-        copy = []
-    }
-    // 遍历对象的key
-    for (let key in obj) {
-        // 如果key是对象的自有属性
-        if (obj.hasOwnProperty(key)) {
-            // 递归调用深拷贝方法
-            copy[key] = deepClone(obj[key])
-        }
-    }
-    return copy
-}
-
-function deepClone(obj) {
-    if (typeof obj !== 'object' || obj === null) return obj;
-    let copy = {}
-    if (obj.constructor === Array) {
-        copy = []
-    }
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            copy[key] = deepClone(obj[key])
-        }
-    }
-    return copy
-}
-
-/**
- * 深拷贝
- * @param {obect} obj 要拷贝的对象
- * @returns 拷贝后
- */
-function deepClone(obj){
-    if(typeof(obj)!=='object' || obj==null) return obj;
-    let copy = obj instanceof Array ? [] : {}
-    for(let key in obj){
-        if(obj.hasOwnProperty(key)){
-            copy[key] = deepClone(obj[key])
-        }
-    }
-    return copy
-}
-
-// 简洁版本
-// 简单版：
-
-const newObj = JSON.parse(JSON.stringify(oldObj));
-// 局限性：
-
-// 他无法实现对函数 、RegExp等特殊对象的克隆
-// 会抛弃对象的constructor,所有的构造函数会指向Object
-// 对象有循环引用,会报错
-```
-<a href="#开始">回到目录</a>
-
-            
 ## getType.js
 ``` javascript
 //getType 获取对象类型
@@ -2115,64 +1977,42 @@ getType(/123/g) //"RegExp" toString返回
 <a href="#开始">回到目录</a>
 
             
-## instanceof.js
+## 递归反转数组.js
 ``` javascript
-//instanceof实现
-function ins(left,right){
-  left = left.__proto__
-  right = right.prototype
-  while(left){
-    if(left === right) return true;
-    left = left.__proto__
-  }
-  return false
+//递归反转
+function r(arr){
+    var str = []
+    function dg(i){
+        if(!i.length) return;
+        str.push(i.pop())
+        return dg(i)
+    }
+    dg(arr)
+    return str
 }
 
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
-console.log(ins({},Function))
-console.log(ins(function(){/************/},Function))
-console.log(ins([],Function))
-//
+let arr = ['你好','我的','再加']
+console.log(r(arr).join(','))
+
+console.log(setImmediate)
+console.log(setTimeout)
 ```
 <a href="#开始">回到目录</a>
 
             
-## linkedList.js
+## throttle.js
 ``` javascript
-// 链表
-const d = {
-    val:'d'
-}
-const c = {
-    val:'c',
-    next:d
-}
-const b = {
-    val:'b',
-    next:c
-}
-const a = {
-    val:'a',
-    next:b
-}
-
-let arr = []
-// function dg(obj){
-//     arr.push(obj.val)
-//     if(!obj.next)return
-//     dg(obj.next)
-// }
-// dg(a)
-function dg2(obj){
-    while(obj){
-        arr.push(obj.val)
-        obj = obj.next
+// 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
+        }
     }
 }
-dg2(a)
-console.log(arr)
 ```
 <a href="#开始">回到目录</a>
 
@@ -2252,6 +2092,214 @@ process.nextTick(() => {
 <a href="#开始">回到目录</a>
 
             
+## class.js
+``` javascript
+//class
+function mixins(...list){
+    return function(target){
+        Object.assign(target.prototype,...list)
+    }
+}
+
+const Foo = {
+    foo(){
+        console.log('foo...')
+    }
+}
+
+// @mixins(Foo)
+// class MyClass{/************/}
+
+// let obj = new MyClass()
+// obj.foo()
+//
+
+class People{
+    constructor(name){
+        this.name = name
+    }
+    say(){
+        console.log(`${this.name}明`)
+    }
+}
+
+const x = new People('小')
+
+class Student extends People{
+    constructor(name,num){
+        super(name)
+        this.num = num;
+    }
+}
+
+const b = new Student(222)
+
+console.log(b.name)
+```
+<a href="#开始">回到目录</a>
+
+            
+## bubbleSort.js
+``` javascript
+//冒泡排序
+function bubbleSort(arr){
+    let temp;
+    for(let i = 0;i<arr.length-1;i++){
+        for(let j = 0;j<arr.length-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                temp = arr[j+1]
+                arr[j+1] = arr[j]
+                arr[j] = temp
+            }
+        }
+    }
+    return arr
+}
+
+console.log(bubbleSort([21,213,32,1212,312,432312,324,13667,345]))
+console.log(bubbleSort([998,484,5686,4562,120,2122,0,12,6]))
+/**********/
+```
+<a href="#开始">回到目录</a>
+
+            
+## quickSort.js
+``` javascript
+function quickSort(arr){
+    if(arr.length===1)return arr[0];
+    let left = [];
+    let right = [];
+    for(let i =0;i<arr.length-1;i++){
+        if(arr[i]>arr[i+1]){
+            right.push(arr[i])
+        }else{
+            left.push(arr[i])
+        }
+    }
+    console.log(left)
+    return quickSort(left).concat(quickSort(right))
+}
+
+console.log(quickSort([8686,48568,848,21,3485,1330,158]))
+```
+<a href="#开始">回到目录</a>
+
+            
+## instanceof.js
+``` javascript
+//instanceof实现
+function ins(left,right){
+  left = left.__proto__
+  right = right.prototype
+  while(left){
+    if(left === right) return true;
+    left = left.__proto__
+  }
+  return false
+}
+
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
+console.log(ins({},Function))
+console.log(ins(function(){/************/},Function))
+console.log(ins([],Function))
+//
+```
+<a href="#开始">回到目录</a>
+
+            
+## deepClone.js
+``` javascript
+function deepClone(obj) {
+    // 如果是 值类型 或 null，则直接return
+    if (typeof obj !== 'object' || obj === null) {
+        return obj
+    }
+    // 定义结果对象
+    let copy = {}
+    // 如果对象是数组，则定义结果数组
+    if (obj.constructor === Array) {
+        copy = []
+    }
+    // 遍历对象的key
+    for (let key in obj) {
+        // 如果key是对象的自有属性
+        if (obj.hasOwnProperty(key)) {
+            // 递归调用深拷贝方法
+            copy[key] = deepClone(obj[key])
+        }
+    }
+    return copy
+}
+
+function deepClone(obj) {
+    if (typeof obj !== 'object' || obj === null) return obj;
+    let copy = {}
+    if (obj.constructor === Array) {
+        copy = []
+    }
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            copy[key] = deepClone(obj[key])
+        }
+    }
+    return copy
+}
+
+/**
+ * 深拷贝
+ * @param {obect} obj 要拷贝的对象
+ * @returns 拷贝后
+ */
+function deepClone(obj){
+    if(typeof(obj)!=='object' || obj==null) return obj;
+    let copy = obj instanceof Array ? [] : {}
+    for(let key in obj){
+        if(obj.hasOwnProperty(key)){
+            copy[key] = deepClone(obj[key])
+        }
+    }
+    return copy
+}
+
+// 简洁版本
+// 简单版：
+
+const newObj = JSON.parse(JSON.stringify(oldObj));
+// 局限性：
+
+// 他无法实现对函数 、RegExp等特殊对象的克隆
+// 会抛弃对象的constructor,所有的构造函数会指向Object
+// 对象有循环引用,会报错
+```
+<a href="#开始">回到目录</a>
+
+            
+## stack.js
+``` javascript
+// const stack = [];
+// stack.push(1);
+// stack.push(2);
+// const item1 = stack.pop();
+// const item2 = stack.pop();
+
+// 调用堆栈
+function f1(){
+    f2()
+}
+function f2(){
+    f3()
+}
+function f3(){
+    //后进先出/////
+}
+
+f1()
+```
+<a href="#开始">回到目录</a>
+
+            
 ## observe.js
 ``` javascript
 // 触发更新视图
@@ -2326,87 +2374,39 @@ observer(data)
 <a href="#开始">回到目录</a>
 
             
-## quickSort.js
+## linkedList.js
 ``` javascript
-function quickSort(arr){
-    if(arr.length===1)return arr[0];
-    let left = [];
-    let right = [];
-    for(let i =0;i<arr.length-1;i++){
-        if(arr[i]>arr[i+1]){
-            right.push(arr[i])
-        }else{
-            left.push(arr[i])
-        }
-    }
-    console.log(left)
-    return quickSort(left).concat(quickSort(right))
+// 链表
+const d = {
+    val:'d'
+}
+const c = {
+    val:'c',
+    next:d
+}
+const b = {
+    val:'b',
+    next:c
+}
+const a = {
+    val:'a',
+    next:b
 }
 
-console.log(quickSort([8686,48568,848,21,3485,1330,158]))
-```
-<a href="#开始">回到目录</a>
-
-            
-## stack.js
-``` javascript
-// const stack = [];
-// stack.push(1);
-// stack.push(2);
-// const item1 = stack.pop();
-// const item2 = stack.pop();
-
-// 调用堆栈
-function f1(){
-    f2()
-}
-function f2(){
-    f3()
-}
-function f3(){
-    //后进先出/////
-}
-
-f1()
-```
-<a href="#开始">回到目录</a>
-
-            
-## throttle.js
-``` javascript
-// 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
-        }
+let arr = []
+// function dg(obj){
+//     arr.push(obj.val)
+//     if(!obj.next)return
+//     dg(obj.next)
+// }
+// dg(a)
+function dg2(obj){
+    while(obj){
+        arr.push(obj.val)
+        obj = obj.next
     }
 }
-```
-<a href="#开始">回到目录</a>
-
-            
-## 递归反转数组.js
-``` javascript
-//递归反转
-function r(arr){
-    var str = []
-    function dg(i){
-        if(!i.length) return;
-        str.push(i.pop())
-        return dg(i)
-    }
-    dg(arr)
-    return str
-}
-
-let arr = ['你好','我的','再加']
-console.log(r(arr).join(','))
-
-console.log(setImmediate)
-console.log(setTimeout)
+dg2(a)
+console.log(arr)
 ```
 <a href="#开始">回到目录</a>
