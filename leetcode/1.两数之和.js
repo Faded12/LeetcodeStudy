@@ -13,9 +13,9 @@
 var twoSum = function(nums, target) {
     let map = {}
     for(let i = 0;i<nums.length;i++){
-        let res = target - nums[i]
-        if(res in map){
-            return [map[res],i]
+        let cur = target - nums[i]
+        if(cur in map){
+            return [i,map[cur]]
         }else{
             map[nums[i]] = i
         }

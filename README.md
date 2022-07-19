@@ -3,7 +3,7 @@
 ##### 此文档涵盖项目内所有代码实现，由 <a href="./genMd.js">./genMd.js</a> 自动生成 🌪
 
 
-##### 🤯 LeetCode：55
+##### 🤯 LeetCode：56
 ##### 🧐 JS方法实现：14
 
 | 🌟 Title 🌟 | 🌟 Title 🌟 |
@@ -20,29 +20,29 @@
 |  🔘    <a href="#111二叉树的最小深度js">111.二叉树的最小深度.js</a> | 🔘    <a href="#136只出现一次的数字js">136.只出现一次的数字.js</a> |
 |  🔘    <a href="#141环形链表js">141.环形链表.js</a> | 🔘    <a href="#144二叉树的前序遍历js">144.二叉树的前序遍历.js</a> |
 |  🔘    <a href="#145二叉树的后序遍历js">145.二叉树的后序遍历.js</a> | 🔘    <a href="#169多数元素js">169.多数元素.js</a> |
-|  ⚪️    <a href="#199二叉树的右视图js">199.二叉树的右视图.js</a> | 🔘    <a href="#203移除链表元素js">203.移除链表元素.js</a> |
-|  🔘    <a href="#206反转链表js">206.反转链表.js</a> | 🔘    <a href="#222完全二叉树的节点个数js">222.完全二叉树的节点个数.js</a> |
-|  🔘    <a href="#226翻转二叉树js">226.翻转二叉树.js</a> | 🔘    <a href="#237删除链表中的节点js">237.删除链表中的节点.js</a> |
-|  🔘    <a href="#240搜索二维矩阵-iijs">240.搜索二维矩阵-ii.js</a> | ⚪️    <a href="#242有效的字母异位词js">242.有效的字母异位词.js</a> |
-|  🔘    <a href="#344反转字符串js">344.反转字符串.js</a> | 🔘    <a href="#383赎金信js">383.赎金信.js</a> |
-|  🔘    <a href="#387字符串中的第一个唯一字符js">387.字符串中的第一个唯一字符.js</a> | 🔘    <a href="#389找不同js">389.找不同.js</a> |
-|  🔘    <a href="#509斐波那契数js">509.斐波那契数.js</a> | 🔘    <a href="#591标签验证器js">591.标签验证器.js</a> |
-|  🔘    <a href="#700二叉搜索树中的搜索js">700.二叉搜索树中的搜索.js</a> | 🔘    <a href="#704二分查找js">704.二分查找.js</a> |
-|  🔘    <a href="#771宝石与石头js">771.宝石与石头.js</a> | 🔘    <a href="#832翻转图像js">832.翻转图像.js</a> |
-|  🔘    <a href="#876链表的中间结点js">876.链表的中间结点.js</a> | 🔘    <a href="#933最近的请求次数js">933.最近的请求次数.js</a> |
-|  ⚪️    <a href="#1079活字印刷js">1079.活字印刷.js</a> | 🔘    <a href="#1221分割平衡字符串js">1221.分割平衡字符串.js</a> |
-|  🔘    <a href="#1305两棵二叉搜索树中的所有元素js">1305.两棵二叉搜索树中的所有元素.js</a> | ⚪️    <a href="#1347制造字母异位词的最小步骤数js">1347.制造字母异位词的最小步骤数.js</a> |
-|  ⚪️    <a href="#1419数青蛙js">1419.数青蛙.js</a> | 🔘    <a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a> |
-|  🔘    <a href="#1827最少操作使数组递增js">1827.最少操作使数组递增.js</a> | 🔘    <a href="#2073买票需要的时间js">2073.买票需要的时间.js</a> |
-|  🔘    <a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a> | 🔘    <a href="#2259移除指定数字得到的最大结果js">2259.移除指定数字得到的最大结果.js</a> |
-|  🔘    <a href="#classjs">class.js</a> | 🔘    <a href="#linkedListjs">linkedList.js</a> |
-|  🔘    <a href="#nodeTaskjs">nodeTask.js</a> | 🔘    <a href="#getTypejs">getType.js</a> |
-|  🔘    <a href="#bubbleSortjs">bubbleSort.js</a> | 🔘    <a href="#quickSortjs">quickSort.js</a> |
-|  🔘    <a href="#observejs">observe.js</a> | 🔘    <a href="#stackjs">stack.js</a> |
-|  🔘    <a href="#throttlejs">throttle.js</a> | 🔘    <a href="#constjs">const.js</a> |
-|  🔘    <a href="#递归反转数组js">递归反转数组.js</a> | 🔘    <a href="#ajaxjs">ajax.js</a> |
-|  🔘    <a href="#instanceofjs">instanceof.js</a> | 🔘    <a href="#debouncejs">debounce.js</a> |
-|  🔘    <a href="#deepClonejs">deepClone.js</a> |
+|  🔘    <a href="#198打家劫舍js">198.打家劫舍.js</a> | ⚪️    <a href="#199二叉树的右视图js">199.二叉树的右视图.js</a> |
+|  🔘    <a href="#203移除链表元素js">203.移除链表元素.js</a> | 🔘    <a href="#206反转链表js">206.反转链表.js</a> |
+|  🔘    <a href="#222完全二叉树的节点个数js">222.完全二叉树的节点个数.js</a> | 🔘    <a href="#226翻转二叉树js">226.翻转二叉树.js</a> |
+|  🔘    <a href="#237删除链表中的节点js">237.删除链表中的节点.js</a> | 🔘    <a href="#240搜索二维矩阵-iijs">240.搜索二维矩阵-ii.js</a> |
+|  ⚪️    <a href="#242有效的字母异位词js">242.有效的字母异位词.js</a> | 🔘    <a href="#344反转字符串js">344.反转字符串.js</a> |
+|  🔘    <a href="#383赎金信js">383.赎金信.js</a> | 🔘    <a href="#387字符串中的第一个唯一字符js">387.字符串中的第一个唯一字符.js</a> |
+|  🔘    <a href="#389找不同js">389.找不同.js</a> | 🔘    <a href="#509斐波那契数js">509.斐波那契数.js</a> |
+|  🔘    <a href="#591标签验证器js">591.标签验证器.js</a> | 🔘    <a href="#700二叉搜索树中的搜索js">700.二叉搜索树中的搜索.js</a> |
+|  🔘    <a href="#704二分查找js">704.二分查找.js</a> | 🔘    <a href="#771宝石与石头js">771.宝石与石头.js</a> |
+|  🔘    <a href="#832翻转图像js">832.翻转图像.js</a> | 🔘    <a href="#876链表的中间结点js">876.链表的中间结点.js</a> |
+|  🔘    <a href="#933最近的请求次数js">933.最近的请求次数.js</a> | ⚪️    <a href="#1079活字印刷js">1079.活字印刷.js</a> |
+|  🔘    <a href="#1221分割平衡字符串js">1221.分割平衡字符串.js</a> | 🔘    <a href="#1305两棵二叉搜索树中的所有元素js">1305.两棵二叉搜索树中的所有元素.js</a> |
+|  ⚪️    <a href="#1347制造字母异位词的最小步骤数js">1347.制造字母异位词的最小步骤数.js</a> | ⚪️    <a href="#1419数青蛙js">1419.数青蛙.js</a> |
+|  🔘    <a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a> | 🔘    <a href="#1827最少操作使数组递增js">1827.最少操作使数组递增.js</a> |
+|  🔘    <a href="#2073买票需要的时间js">2073.买票需要的时间.js</a> | 🔘    <a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a> |
+|  🔘    <a href="#2259移除指定数字得到的最大结果js">2259.移除指定数字得到的最大结果.js</a> | 🔘    <a href="#bubbleSortjs">bubbleSort.js</a> |
+|  🔘    <a href="#递归反转数组js">递归反转数组.js</a> | 🔘    <a href="#quickSortjs">quickSort.js</a> |
+|  🔘    <a href="#observejs">observe.js</a> | 🔘    <a href="#debouncejs">debounce.js</a> |
+|  🔘    <a href="#ajaxjs">ajax.js</a> | 🔘    <a href="#classjs">class.js</a> |
+|  🔘    <a href="#stackjs">stack.js</a> | 🔘    <a href="#constjs">const.js</a> |
+|  🔘    <a href="#deepClonejs">deepClone.js</a> | 🔘    <a href="#getTypejs">getType.js</a> |
+|  🔘    <a href="#nodeTaskjs">nodeTask.js</a> | 🔘    <a href="#instanceofjs">instanceof.js</a> |
+|  🔘    <a href="#linkedListjs">linkedList.js</a> | 🔘    <a href="#throttlejs">throttle.js</a> |
             
 ## 1.两数之和.js
 ``` javascript
@@ -61,9 +61,9 @@
 var twoSum = function(nums, target) {
     let map = {}
     for(let i = 0;i<nums.length;i++){
-        let res = target - nums[i]
-        if(res in map){
-            return [map[res],i]
+        let cur = target - nums[i]
+        if(cur in map){
+            return [i,map[cur]]
         }else{
             map[nums[i]] = i
         }
@@ -895,6 +895,37 @@ var majorityElement = function(nums) {
 // @lc code=end
 
 
+```
+<a href="#开始">回到目录</a>
+
+            
+## 198.打家劫舍.js
+``` javascript
+/*
+ * @lc app=leetcode.cn id=198 lang=javascript
+ *
+ * [198] 打家劫舍
+ */
+
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var rob = function(nums) {
+    const len = nums.length;
+    const dp = [0, nums[0]];
+    for(let i = 2; i<=len;i++){
+        dp[i] = dp[i-1]+ Math.max(dp[i-2],dp[i-1])
+    }
+    console.log(dp)
+    return dp[len]
+};
+// @lc code=end
 ```
 <a href="#开始">回到目录</a>
 
@@ -1936,190 +1967,6 @@ var deleteMiddle = function(head) {
 <a href="#开始">回到目录</a>
 
             
-## class.js
-``` javascript
-//class
-function mixins(...list){
-    return function(target){
-        Object.assign(target.prototype,...list)
-    }
-}
-
-const Foo = {
-    foo(){
-        console.log('foo...')
-    }
-}
-
-// @mixins(Foo)
-// class MyClass{/************/}
-
-// let obj = new MyClass()
-// obj.foo()
-//
-
-class People{
-    constructor(name){
-        this.name = name
-    }
-    say(){
-        console.log(`${this.name}明`)
-    }
-}
-
-const x = new People('小')
-
-class Student extends People{
-    constructor(name,num){
-        super(name)
-        this.num = num;
-    }
-}
-
-const b = new Student(222)
-
-console.log(b.name)
-```
-<a href="#开始">回到目录</a>
-
-            
-## linkedList.js
-``` javascript
-// 链表
-const d = {
-    val:'d'
-}
-const c = {
-    val:'c',
-    next:d
-}
-const b = {
-    val:'b',
-    next:c
-}
-const a = {
-    val:'a',
-    next:b
-}
-
-let arr = []
-// function dg(obj){
-//     arr.push(obj.val)
-//     if(!obj.next)return
-//     dg(obj.next)
-// }
-// dg(a)
-function dg2(obj){
-    while(obj){
-        arr.push(obj.val)
-        obj = obj.next
-    }
-}
-dg2(a)
-console.log(arr)
-```
-<a href="#开始">回到目录</a>
-
-            
-## nodeTask.js
-``` javascript
-// //node事件循环
-// const fs = require('fs');
-// // 首次事件循环执行
-// console.log('start');
-// setTimeout(() => { // 新的事件循环的起点
-//     console.log('setTimeout1'); 
-// }, 10);
-// /// 将会在新的事件循环中的阶段执行
-// fs.readFile('./stack.js', {encoding: 'utf-8'}, (err, data) => {
-//     if (err) throw err;
-//     console.log('read file success');
-// });
-// setTimeout(() => { // 新的事件循环的起点
-//     console.log('setTimeout2'); 
-// }, 0);
-// /// 该部分将会在首次事件循环中执行
-// Promise.resolve().then(()=>{
-//     console.log('Promise callback');
-// });
-// /// 执行 process.nextTick
-// process.nextTick(() => {
-//     console.log('nextTick callback');
-// });
-// // 首次事件循环执行
-// console.log('end');
-
-// -------
-
-// const fs = require('fs');
-// setTimeout(() => { // 新的事件循环的起点
-//     console.log('1'); 
-//     fs.readFile('./stack.js', {encoding: 'utf-8'}, (err, data) => {
-//         if (err) throw err;
-//         console.log('read file sync success');
-//     });
-// }, 0);
-// /// 回调将会在新的事件循环之前
-// fs.readFile('./stack.js', {encoding: 'utf-8'}, (err, data) => {
-//     if (err) throw err;
-//     console.log('read file success');
-// });
-// /// 该部分将会在首次事件循环中执行
-// Promise.resolve().then(()=>{
-//     console.log('poll callback');
-// });
-// // 首次事件循环执行
-// console.log('2');
-
-// ------
-
-const fs = require('fs');
-setTimeout(() => {
-    console.log("timer1");
-
-    Promise.resolve().then(function () {
-        console.log("promise1");
-    });
-}, 0);
-
-// poll阶段执行
-fs.readFile('./stack.js', () => {
-    // 在poll阶段里面 如果有setImmediate优先执行，setTimeout处于事件循环顶端 poll下面就是setImmediate
-    setTimeout(() => console.log('setTimeout'), 0)
-    setImmediate(() => console.log('setImmediate'), 0)
-})
-
-process.nextTick(() => {
-    console.log("nextTick");
-});
-```
-<a href="#开始">回到目录</a>
-
-            
-## getType.js
-``` javascript
-//getType 获取对象类型
-function getType(obj) {
-    let type = typeof obj;
-    if (type !== "object") { // 先进行typeof判断，如果是 基础数据类型，直接返回
-        return type;
-    }
-    // 对于typeof返回结果是object的，再进行如下的判断，正则返回结果
-    return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1'); // 注意正则中间有个空格
-}
-getType([]) // "Array" typeof []是object，因此toString返回
-getType('123') // "string" typeof 直接返回
-getType(window) // "Window" toString返回
-getType(null) // "Null"首字母大写，typeof null是object，需toString来判断
-getType(undefined) // "undefined" typeof 直接返回
-getType() // "undefined" typeof 直接返回
-getType(function () {/************/}) // "function" typeof能判断，因此首字母小写
-getType(/123/g) //"RegExp" toString返回
-//
-```
-<a href="#开始">回到目录</a>
-
-            
 ## bubbleSort.js
 ``` javascript
 //冒泡排序
@@ -2139,6 +1986,29 @@ function bubbleSort(arr){
 console.log(bubbleSort([21,213,32,1212,312,432312,324,13667,345]))
 console.log(bubbleSort([998,484,5686,4562,120,2122,0,12,6]))
 /**********/
+```
+<a href="#开始">回到目录</a>
+
+            
+## 递归反转数组.js
+``` javascript
+//递归反转
+function r(arr){
+    var str = []
+    function dg(i){
+        if(!i.length) return;
+        str.push(i.pop())
+        return dg(i)
+    }
+    dg(arr)
+    return str
+}
+
+let arr = ['你好','我的','再加']
+console.log(r(arr).join(','))
+
+console.log(setImmediate)
+console.log(setTimeout)
 ```
 <a href="#开始">回到目录</a>
 
@@ -2241,99 +2111,28 @@ observer(data)
 <a href="#开始">回到目录</a>
 
             
-## stack.js
+## debounce.js
 ``` javascript
-// const stack = [];
-// stack.push(1);
-// stack.push(2);
-// const item1 = stack.pop();
-// const item2 = stack.pop();
-
-// 调用堆栈
-function f1(){
-    f2()
-}
-function f2(){
-    f3()
-}
-function f3(){
-    //后进先出/////
-}
-
-f1()
-```
-<a href="#开始">回到目录</a>
-
-            
-## throttle.js
-``` javascript
-// 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
-        }
+// 防抖
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
     }
 }
-```
-<a href="#开始">回到目录</a>
 
-            
-## const.js
-``` javascript
-var __const = function __const(data, value) {
-    window.data = value // 把要定义的data挂载到window下，并赋值value
-    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
-        enumerable: false,
-        configurable: false,
-        get: function () {
-            return value
-        },
-        set: function (data) {
-            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
-                throw new TypeError('Assignment to constant variable.')
-            } else {
-                return value
-            }
-        }
-    })
-}
-__const('a', 10)
-console.log(a)
-delete a
-console.log(a)
-for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
-    if (item === 'a') { // 因为不可枚举，所以不执行
-        console.log(window[item])
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
     }
 }
-a = 20 // 报错
-```
-<a href="#开始">回到目录</a>
-
-            
-## 递归反转数组.js
-``` javascript
-//递归反转
-function r(arr){
-    var str = []
-    function dg(i){
-        if(!i.length) return;
-        str.push(i.pop())
-        return dg(i)
-    }
-    dg(arr)
-    return str
-}
-
-let arr = ['你好','我的','再加']
-console.log(r(arr).join(','))
-
-console.log(setImmediate)
-console.log(setTimeout)
 ```
 <a href="#开始">回到目录</a>
 
@@ -2367,52 +2166,106 @@ xhr.onreadysatechange = function(){
 <a href="#开始">回到目录</a>
 
             
-## instanceof.js
+## class.js
 ``` javascript
-//instanceof实现
-function ins(left,right){
-  left = left.__proto__
-  right = right.prototype
-  while(left){
-    if(left === right) return true;
-    left = left.__proto__
-  }
-  return false
+//class
+function mixins(...list){
+    return function(target){
+        Object.assign(target.prototype,...list)
+    }
 }
 
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
-console.log(ins({},Function))
-console.log(ins(function(){/************/},Function))
-console.log(ins([],Function))
+const Foo = {
+    foo(){
+        console.log('foo...')
+    }
+}
+
+// @mixins(Foo)
+// class MyClass{/************/}
+
+// let obj = new MyClass()
+// obj.foo()
 //
+
+class People{
+    constructor(name){
+        this.name = name
+    }
+    say(){
+        console.log(`${this.name}明`)
+    }
+}
+
+const x = new People('小')
+
+class Student extends People{
+    constructor(name,num){
+        super(name)
+        this.num = num;
+    }
+}
+
+const b = new Student(222)
+
+console.log(b.name)
 ```
 <a href="#开始">回到目录</a>
 
             
-## debounce.js
+## stack.js
 ``` javascript
-// 防抖
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
+// const stack = [];
+// stack.push(1);
+// stack.push(2);
+// const item1 = stack.pop();
+// const item2 = stack.pop();
+
+// 调用堆栈
+function f1(){
+    f2()
+}
+function f2(){
+    f3()
+}
+function f3(){
+    //后进先出/////
 }
 
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
+f1()
+```
+<a href="#开始">回到目录</a>
+
+            
+## const.js
+``` javascript
+var __const = function __const(data, value) {
+    window.data = value // 把要定义的data挂载到window下，并赋值value
+    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
+        enumerable: false,
+        configurable: false,
+        get: function () {
+            return value
+        },
+        set: function (data) {
+            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
+                throw new TypeError('Assignment to constant variable.')
+            } else {
+                return value
+            }
+        }
+    })
+}
+__const('a', 10)
+console.log(a)
+delete a
+console.log(a)
+for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
+    if (item === 'a') { // 因为不可枚举，所以不执行
+        console.log(window[item])
     }
 }
+a = 20 // 报错
 ```
 <a href="#开始">回到目录</a>
 
@@ -2480,5 +2333,183 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 // 他无法实现对函数 、RegExp等特殊对象的克隆
 // 会抛弃对象的constructor,所有的构造函数会指向Object
 // 对象有循环引用,会报错
+```
+<a href="#开始">回到目录</a>
+
+            
+## getType.js
+``` javascript
+//getType 获取对象类型
+function getType(obj) {
+    let type = typeof obj;
+    if (type !== "object") { // 先进行typeof判断，如果是 基础数据类型，直接返回
+        return type;
+    }
+    // 对于typeof返回结果是object的，再进行如下的判断，正则返回结果
+    return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1'); // 注意正则中间有个空格
+}
+getType([]) // "Array" typeof []是object，因此toString返回
+getType('123') // "string" typeof 直接返回
+getType(window) // "Window" toString返回
+getType(null) // "Null"首字母大写，typeof null是object，需toString来判断
+getType(undefined) // "undefined" typeof 直接返回
+getType() // "undefined" typeof 直接返回
+getType(function () {/************/}) // "function" typeof能判断，因此首字母小写
+getType(/123/g) //"RegExp" toString返回
+//
+```
+<a href="#开始">回到目录</a>
+
+            
+## nodeTask.js
+``` javascript
+// //node事件循环
+// const fs = require('fs');
+// // 首次事件循环执行
+// console.log('start');
+// setTimeout(() => { // 新的事件循环的起点
+//     console.log('setTimeout1'); 
+// }, 10);
+// /// 将会在新的事件循环中的阶段执行
+// fs.readFile('./stack.js', {encoding: 'utf-8'}, (err, data) => {
+//     if (err) throw err;
+//     console.log('read file success');
+// });
+// setTimeout(() => { // 新的事件循环的起点
+//     console.log('setTimeout2'); 
+// }, 0);
+// /// 该部分将会在首次事件循环中执行
+// Promise.resolve().then(()=>{
+//     console.log('Promise callback');
+// });
+// /// 执行 process.nextTick
+// process.nextTick(() => {
+//     console.log('nextTick callback');
+// });
+// // 首次事件循环执行
+// console.log('end');
+
+// -------
+
+// const fs = require('fs');
+// setTimeout(() => { // 新的事件循环的起点
+//     console.log('1'); 
+//     fs.readFile('./stack.js', {encoding: 'utf-8'}, (err, data) => {
+//         if (err) throw err;
+//         console.log('read file sync success');
+//     });
+// }, 0);
+// /// 回调将会在新的事件循环之前
+// fs.readFile('./stack.js', {encoding: 'utf-8'}, (err, data) => {
+//     if (err) throw err;
+//     console.log('read file success');
+// });
+// /// 该部分将会在首次事件循环中执行
+// Promise.resolve().then(()=>{
+//     console.log('poll callback');
+// });
+// // 首次事件循环执行
+// console.log('2');
+
+// ------
+
+const fs = require('fs');
+setTimeout(() => {
+    console.log("timer1");
+
+    Promise.resolve().then(function () {
+        console.log("promise1");
+    });
+}, 0);
+
+// poll阶段执行
+fs.readFile('./stack.js', () => {
+    // 在poll阶段里面 如果有setImmediate优先执行，setTimeout处于事件循环顶端 poll下面就是setImmediate
+    setTimeout(() => console.log('setTimeout'), 0)
+    setImmediate(() => console.log('setImmediate'), 0)
+})
+
+process.nextTick(() => {
+    console.log("nextTick");
+});
+```
+<a href="#开始">回到目录</a>
+
+            
+## instanceof.js
+``` javascript
+//instanceof实现
+function ins(left,right){
+  left = left.__proto__
+  right = right.prototype
+  while(left){
+    if(left === right) return true;
+    left = left.__proto__
+  }
+  return false
+}
+
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
+console.log(ins({},Function))
+console.log(ins(function(){/************/},Function))
+console.log(ins([],Function))
+//
+```
+<a href="#开始">回到目录</a>
+
+            
+## linkedList.js
+``` javascript
+// 链表
+const d = {
+    val:'d'
+}
+const c = {
+    val:'c',
+    next:d
+}
+const b = {
+    val:'b',
+    next:c
+}
+const a = {
+    val:'a',
+    next:b
+}
+
+let arr = []
+// function dg(obj){
+//     arr.push(obj.val)
+//     if(!obj.next)return
+//     dg(obj.next)
+// }
+// dg(a)
+function dg2(obj){
+    while(obj){
+        arr.push(obj.val)
+        obj = obj.next
+    }
+}
+dg2(a)
+console.log(arr)
+```
+<a href="#开始">回到目录</a>
+
+            
+## throttle.js
+``` javascript
+// 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
+        }
+    }
+}
 ```
 <a href="#开始">回到目录</a>
