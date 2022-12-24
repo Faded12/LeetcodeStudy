@@ -36,14 +36,14 @@
 |  ⚪️    <a href="#1617统计子树中城市之间最大距离js">1617.统计子树中城市之间最大距离.js</a> | 🔘    <a href="#1672最富有客户的资产总量js">1672.最富有客户的资产总量.js</a> |
 |  🔘    <a href="#1827最少操作使数组递增js">1827.最少操作使数组递增.js</a> | 🔘    <a href="#2073买票需要的时间js">2073.买票需要的时间.js</a> |
 |  🔘    <a href="#2095删除链表的中间节点js">2095.删除链表的中间节点.js</a> | 🔘    <a href="#2259移除指定数字得到的最大结果js">2259.移除指定数字得到的最大结果.js</a> |
-|  🔘    <a href="#instanceofjs">instanceof.js</a> | 🔘    <a href="#debouncejs">debounce.js</a> |
-|  🔘    <a href="#deepClonejs">deepClone.js</a> | 🔘    <a href="#constjs">const.js</a> |
-|  🔘    <a href="#classjs">class.js</a> | 🔘    <a href="#quickSortjs">quickSort.js</a> |
-|  🔘    <a href="#observejs">observe.js</a> | 🔘    <a href="#linkedListjs">linkedList.js</a> |
-|  🔘    <a href="#bubbleSortjs">bubbleSort.js</a> | 🔘    <a href="#递归反转数组js">递归反转数组.js</a> |
-|  🔘    <a href="#ajaxjs">ajax.js</a> | 🔘    <a href="#stackjs">stack.js</a> |
-|  🔘    <a href="#getTypejs">getType.js</a> | 🔘    <a href="#nodeTaskjs">nodeTask.js</a> |
-|  🔘    <a href="#throttlejs">throttle.js</a> |
+|  🔘    <a href="#constjs">const.js</a> | 🔘    <a href="#deepClonejs">deepClone.js</a> |
+|  🔘    <a href="#instanceofjs">instanceof.js</a> | 🔘    <a href="#classjs">class.js</a> |
+|  🔘    <a href="#throttlejs">throttle.js</a> | 🔘    <a href="#getTypejs">getType.js</a> |
+|  🔘    <a href="#debouncejs">debounce.js</a> | 🔘    <a href="#linkedListjs">linkedList.js</a> |
+|  🔘    <a href="#bubbleSortjs">bubbleSort.js</a> | 🔘    <a href="#quickSortjs">quickSort.js</a> |
+|  🔘    <a href="#递归反转数组js">递归反转数组.js</a> | 🔘    <a href="#stackjs">stack.js</a> |
+|  🔘    <a href="#ajaxjs">ajax.js</a> | 🔘    <a href="#nodeTaskjs">nodeTask.js</a> |
+|  🔘    <a href="#observejs">observe.js</a> |
             
 ## 1.两数之和.js
 ``` javascript
@@ -1992,52 +1992,35 @@ var deleteMiddle = function(head) {
 <a href="#开始">回到目录</a>
 
             
-## instanceof.js
+## const.js
 ``` javascript
-//instanceof实现
-function ins(left,right){
-  left = left.__proto__
-  right = right.prototype
-  while(left){
-    if(left === right) return true;
-    left = left.__proto__
-  }
-  return false
+var __const = function __const(data, value) {
+    window.data = value // 把要定义的data挂载到window下，并赋值value
+    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
+        enumerable: false,
+        configurable: false,
+        get: function () {
+            return value
+        },
+        set: function (data) {
+            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
+                throw new TypeError('Assignment to constant variable.')
+            } else {
+                return value
+            }
+        }
+    })
 }
-
-console.log(ins([1],Array))
-console.log(ins([1],Object))
-console.log(ins(122,String))
-console.log(ins({},Function))
-console.log(ins(function(){/************/},Function))
-console.log(ins([],Function))
-//
-```
-<a href="#开始">回到目录</a>
-
-            
-## debounce.js
-``` javascript
-// 防抖
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
+__const('a', 10)
+console.log(a)
+delete a
+console.log(a)
+for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
+    if (item === 'a') { // 因为不可枚举，所以不执行
+        console.log(window[item])
     }
 }
-
-const debounce = (fn, wait) => {
-    let timer = 0
-    return function (...args) {
-        if (timer) clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.apply(this, args)
-        }, wait)
-    }
-}
+a = 20 // 报错
 ```
 <a href="#开始">回到目录</a>
 
@@ -2109,35 +2092,26 @@ const newObj = JSON.parse(JSON.stringify(oldObj));
 <a href="#开始">回到目录</a>
 
             
-## const.js
+## instanceof.js
 ``` javascript
-var __const = function __const(data, value) {
-    window.data = value // 把要定义的data挂载到window下，并赋值value
-    Object.defineProperty(window, data, { // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符
-        enumerable: false,
-        configurable: false,
-        get: function () {
-            return value
-        },
-        set: function (data) {
-            if (data !== value) { // 当要对当前属性进行赋值时，则抛出错误！
-                throw new TypeError('Assignment to constant variable.')
-            } else {
-                return value
-            }
-        }
-    })
+//instanceof实现
+function ins(left,right){
+  left = left.__proto__
+  right = right.prototype
+  while(left){
+    if(left === right) return true;
+    left = left.__proto__
+  }
+  return false
 }
-__const('a', 10)
-console.log(a)
-delete a
-console.log(a)
-for (let item in window) { // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能
-    if (item === 'a') { // 因为不可枚举，所以不执行
-        console.log(window[item])
-    }
-}
-a = 20 // 报错
+
+console.log(ins([1],Array))
+console.log(ins([1],Object))
+console.log(ins(122,String))
+console.log(ins({},Function))
+console.log(ins(function(){/************/},Function))
+console.log(ins([],Function))
+//
 ```
 <a href="#开始">回到目录</a>
 
@@ -2189,100 +2163,69 @@ console.log(b.name)
 <a href="#开始">回到目录</a>
 
             
-## quickSort.js
+## throttle.js
 ``` javascript
-// 快速排序
-function quickSort(arr){
-    if(arr.length<=1) return arr;
-    let midIndex = Math.floor(arr.length/2)
-    let mid = arr.splice(midIndex,1)[0]
-    let left = [];
-    let right = [];
-    for(let i = 0;i<arr.length;i++){
-        if(arr[i]<mid){
-            left.push(arr[i])
-        }else{
-            right.push(arr[i])
+// 节流
+const throttle = (fn,wait)=>{
+    let lastTime = 0
+    return function(...args){
+        let now = +new Date()
+        if(now - lastTime >wait){
+            lastTime = now
+            fn.apply(this,args)
         }
     }
-    return [...quickSort(left),mid,...quickSort(right)]
 }
-
-console.log(quickSort([8686,48568,848,21,3485,1330,158]))
 ```
 <a href="#开始">回到目录</a>
 
             
-## observe.js
+## getType.js
 ``` javascript
-// 触发更新视图
-function updateView() {
-    console.log('视图更新')
+//getType 获取对象类型
+function getType(obj) {
+    let type = typeof obj;
+    if (type !== "object") { // 先进行typeof判断，如果是 基础数据类型，直接返回
+        return type;
+    }
+    // 对于typeof返回结果是object的，再进行如下的判断，正则返回结果
+    return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1'); // 注意正则中间有个空格
 }
+getType([]) // "Array" typeof []是object，因此toString返回
+getType('123') // "string" typeof 直接返回
+getType(window) // "Window" toString返回
+getType(null) // "Null"首字母大写，typeof null是object，需toString来判断
+getType(undefined) // "undefined" typeof 直接返回
+getType() // "undefined" typeof 直接返回
+getType(function () {/************/}) // "function" typeof能判断，因此首字母小写
+getType(/123/g) //"RegExp" toString返回
+//
+```
+<a href="#开始">回到目录</a>
 
-const oldArrayFun = Array.prototype;
-const newArrayFun = Object.create(oldArrayFun);
-['pop','push','shift','unshift','splice'].forEach(item=>{
-    newArrayFun[item] = function(){
-        updateView();
-        oldArrayFun[item].call(this,...arguments)
-    }
-})
-
-
-// 重新定义属性，监听起来
-function defineReactive(target, key, value) {
-    // 深度监听
-    observer(value)
-
-    // 核心 API
-    Object.defineProperty(target, key, {
-        get() {
-            return value
-        },
-        set(newValue) {
-            if (newValue !== value) {
-                // 深度监听
-                observer(newValue)
-                // 设置新值
-                // 注意，value 一直在闭包中，此处设置完之后，再 get 时也是会获取最新的值
-                value = newValue
-                // 触发更新视图
-                updateView()
-            }
-        }
-    })
-}
-
-// 监听对象属性
-function observer(target){
-    if(typeof target !=='object' || target == null){
-        return target
-    }
-
-    if(target instanceof Array){
-        target.__proto__ = newArrayFun
-    }
-
-    for(let item in target){
-        defineReactive(target,item,target[item])
+            
+## debounce.js
+``` javascript
+// 防抖
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
     }
 }
 
-// 准备数据
-const data = {
-    name: 'name',
-    age: 18,
-    info: {
-        address: 'address' // 需要深度监听
-    },
-    nums: [1, 2, 3]
+const debounce = (fn, wait) => {
+    let timer = 0
+    return function (...args) {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, wait)
+    }
 }
-
-// 监听数据
-observer(data)
-
-
 ```
 <a href="#开始">回到目录</a>
 
@@ -2348,6 +2291,30 @@ console.log(bubbleSort([998,484,5686,4562,120,2122,0,12,6]))
 <a href="#开始">回到目录</a>
 
             
+## quickSort.js
+``` javascript
+// 快速排序
+function quickSort(arr){
+    if(arr.length<=1) return arr;
+    let midIndex = Math.floor(arr.length/2)
+    let mid = arr.splice(midIndex,1)[0]
+    let left = [];
+    let right = [];
+    for(let i = 0;i<arr.length;i++){
+        if(arr[i]<mid){
+            left.push(arr[i])
+        }else{
+            right.push(arr[i])
+        }
+    }
+    return [...quickSort(left),mid,...quickSort(right)]
+}
+
+console.log(quickSort([8686,48568,848,21,3485,1330,158]))
+```
+<a href="#开始">回到目录</a>
+
+            
 ## 递归反转数组.js
 ``` javascript
 //递归反转
@@ -2367,6 +2334,30 @@ console.log(r(arr).join(','))
 
 console.log(setImmediate)
 console.log(setTimeout)
+```
+<a href="#开始">回到目录</a>
+
+            
+## stack.js
+``` javascript
+// const stack = [];
+// stack.push(1);
+// stack.push(2);
+// const item1 = stack.pop();
+// const item2 = stack.pop();
+
+// 调用堆栈
+function f1(){
+    f2()
+}
+function f2(){
+    f3()
+}
+function f3(){
+    //后进先出/////
+}
+
+f1()
 ```
 <a href="#开始">回到目录</a>
 
@@ -2396,54 +2387,6 @@ xhr.onreadysatechange = function(){
         
     }
 }
-```
-<a href="#开始">回到目录</a>
-
-            
-## stack.js
-``` javascript
-// const stack = [];
-// stack.push(1);
-// stack.push(2);
-// const item1 = stack.pop();
-// const item2 = stack.pop();
-
-// 调用堆栈
-function f1(){
-    f2()
-}
-function f2(){
-    f3()
-}
-function f3(){
-    //后进先出/////
-}
-
-f1()
-```
-<a href="#开始">回到目录</a>
-
-            
-## getType.js
-``` javascript
-//getType 获取对象类型
-function getType(obj) {
-    let type = typeof obj;
-    if (type !== "object") { // 先进行typeof判断，如果是 基础数据类型，直接返回
-        return type;
-    }
-    // 对于typeof返回结果是object的，再进行如下的判断，正则返回结果
-    return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1'); // 注意正则中间有个空格
-}
-getType([]) // "Array" typeof []是object，因此toString返回
-getType('123') // "string" typeof 直接返回
-getType(window) // "Window" toString返回
-getType(null) // "Null"首字母大写，typeof null是object，需toString来判断
-getType(undefined) // "undefined" typeof 直接返回
-getType() // "undefined" typeof 直接返回
-getType(function () {/************/}) // "function" typeof能判断，因此首字母小写
-getType(/123/g) //"RegExp" toString返回
-//
 ```
 <a href="#开始">回到目录</a>
 
@@ -2523,18 +2466,75 @@ process.nextTick(() => {
 <a href="#开始">回到目录</a>
 
             
-## throttle.js
+## observe.js
 ``` javascript
-// 节流
-const throttle = (fn,wait)=>{
-    let lastTime = 0
-    return function(...args){
-        let now = +new Date()
-        if(now - lastTime >wait){
-            lastTime = now
-            fn.apply(this,args)
+// 触发更新视图
+function updateView() {
+    console.log('视图更新')
+}
+
+const oldArrayFun = Array.prototype;
+const newArrayFun = Object.create(oldArrayFun);
+['pop','push','shift','unshift','splice'].forEach(item=>{
+    newArrayFun[item] = function(){
+        updateView();
+        oldArrayFun[item].call(this,...arguments)
+    }
+})
+
+
+// 重新定义属性，监听起来
+function defineReactive(target, key, value) {
+    // 深度监听
+    observer(value)
+
+    // 核心 API
+    Object.defineProperty(target, key, {
+        get() {
+            return value
+        },
+        set(newValue) {
+            if (newValue !== value) {
+                // 深度监听
+                observer(newValue)
+                // 设置新值
+                // 注意，value 一直在闭包中，此处设置完之后，再 get 时也是会获取最新的值
+                value = newValue
+                // 触发更新视图
+                updateView()
+            }
         }
+    })
+}
+
+// 监听对象属性
+function observer(target){
+    if(typeof target !=='object' || target == null){
+        return target
+    }
+
+    if(target instanceof Array){
+        target.__proto__ = newArrayFun
+    }
+
+    for(let item in target){
+        defineReactive(target,item,target[item])
     }
 }
+
+// 准备数据
+const data = {
+    name: 'name',
+    age: 18,
+    info: {
+        address: 'address' // 需要深度监听
+    },
+    nums: [1, 2, 3]
+}
+
+// 监听数据
+observer(data)
+
+
 ```
 <a href="#开始">回到目录</a>
